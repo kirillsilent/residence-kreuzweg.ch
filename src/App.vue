@@ -53,7 +53,7 @@
     <footer class="site-footer">
       <div class="width footer-inner">
         <div class="footer-details">
-          <div><p>Rewus GmbH <br />Britschenmattstrasse 29<br />3238 Gals</p></div>
+          <div><p>ESM TECHNOLOGIE GMBH<br />Britschenmattstrasse 29</p></div>
           <div><a href="https://www.lrm-services.ch" target="_blank"><img :src="baseUrl + 'imgs/logos/logo-rewus.svg'" alt="Rewus GmbH logo" /></a></div>
           <div><p><a href="mailto:info@esm-technologie.ch">info@esm-technologie.ch</a><br /><a href="tel:+41795760405">+41 79 576 04 05</a></p></div>
         </div>
@@ -110,12 +110,12 @@ const seoByRoute = {
     de: {
       title: 'Lage',
       description:
-        'Top-Lage in Herzogenbuchsee mit schneller Anbindung an Bern und Zuerich sowie hoher Lebensqualitaet im gruenden Umfeld.',
+        'Residenz in Gals im Herzen des Seelands mit ruhigem natuerlichem Umfeld und schneller Anbindung an Neuenburg, Biel und Murten.',
     },
     fr: {
       title: 'Situation',
       description:
-        'Situation privilegiee a Herzogenbuchsee avec acces rapide a Berne et Zurich, dans un environnement residentiel de qualite.',
+        'Residence a Gals, au coeur du Seeland, avec cadre naturel paisible et acces rapide a Neuchatel, Bienne et Morat.',
     },
   },
   '/appartements': {

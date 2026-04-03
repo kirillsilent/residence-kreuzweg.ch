@@ -95,9 +95,9 @@
             </tr>
           </tbody>
         </table>
-        <div class="plans-table-note">
+        <!-- <div class="plans-table-note">
           <p class="plans-table-note-text">{{ t('plans.note') }}</p>
-        </div>
+        </div> -->
       </div>
     </div>
 

@@ -36,17 +36,7 @@
       </div>
       <div class="txt">
         <p class="animate" data-animate="animContent 0.3s .8s forwards">{{ t('apartments.energyIntro') }}</p>
-        <ul class="animate" data-animate="animContent 0.3s 1s forwards">
-          <li>{{ t('apartments.energy1') }}</li>
-          <li>{{ t('apartments.energy2') }}</li>
-        </ul>
-        <p class="txt animate" data-animate="animContent 0.3s 1.2s forwards">{{ t('apartments.budgetsIntro') }}<br /><br />{{ t('apartments.budgetsIntro2') }}<br /><br />{{ t('apartments.budgetsTitle') }}</p>
-        <ul class="ul animate" data-animate="animContent 0.3s 1.4s forwards">
-          <li><span>{{ t('apartments.budgetSanitary') }}</span><span> CHF 15'000.-</span></li>
-          <li><span>{{ t('apartments.budgetKitchen') }}</span><span> CHF 35'000.-</span></li>
-          <li><span>{{ t('apartments.budgetTiles') }}</span><span> CHF 50.-/m2</span></li>
-          <li><span>{{ t('apartments.budgetParquet') }}</span><span> CHF 90.-/m2</span></li>
-        </ul>
+        <p class="animate" data-animate="animContent 0.3s 1s forwards">{{ t('apartments.energyDetails') }}</p>
       </div>
     </section>
 
@@ -62,6 +52,8 @@
       <div class="txt">
         <h2 class="animate" data-animate="animContent 0.3s .5s forwards">{{ t('apartments.exteriorTitle') }}</h2>
         <p class="animate" data-animate="animContent 0.3s .8s forwards">{{ t('apartments.exteriorText') }}</p>
+        <p v-if="t('apartments.exteriorText2')" class="animate" data-animate="animContent 0.3s 1s forwards">{{ t('apartments.exteriorText2') }}</p>
+        <p v-if="t('apartments.exteriorText3')" class="animate" data-animate="animContent 0.3s 1.2s forwards">{{ t('apartments.exteriorText3') }}</p>
       </div>
       <div class="img animate" data-animate="animContent 0.3s 1.2s forwards">
         <img class="imgShow" :src="baseUrl + 'imgs/vis/masterplan.webp'" :data-src="baseUrl + 'imgs/vis/masterplan.webp'" alt="Residence de Muses" />

@@ -36,15 +36,15 @@
       </div>
       <div class="txt">
         <p class="animate" data-animate="animContent 0.3s .8s forwards">{{ t('situation.p4') }}</p>
-        <p class="animate" data-animate="animContent 0.3s 1.1s forwards">{{ t('situation.p5') }}</p>
+        <p v-if="t('situation.p5')" class="animate" data-animate="animContent 0.3s 1.1s forwards">{{ t('situation.p5') }}</p>
         <a :href="googleMapsLinkUrl" class="btn animate" target="_blank" rel="noopener" data-animate="animContent 0.3s 1.3s forwards">{{ t('situation.mapCta') }}</a>
       </div>
     </section>
 
-    <section
+    <!-- <section
       class="fullImg"
       :style="{ backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(' + baseUrl + 'imgs/Coffrane.webp)' }"
-    ></section>
+    ></section> -->
   </main>
 </template>
 
@@ -56,7 +56,7 @@ const { language, t } = useI18n()
 
 const mapLang = computed(() => (language.value === 'fr' ? 'fr' : 'de'))
 const googleMapsLinkUrl = computed(
-  () => `https://www.google.com/maps/search/?api=1&query=Herzogenbuchsee%2C%20Switzerland&hl=${mapLang.value}`
+  () => `https://www.google.com/maps/search/?api=1&query=Kreuzweg%202%2C%20Gals%2C%20Switzerland&hl=${mapLang.value}`
 )
 
 function changeImg(n) {
