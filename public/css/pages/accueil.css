@@ -1,0 +1,40 @@
+.page-accueil .gallery {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.page-accueil .gallery > div {
+  width: 50%;
+}
+
+.page-accueil .gallery > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+}
+
+.page-accueil .gallery > div:first-child img {
+  overflow: hidden;
+  -webkit-animation: filterImg 5s ease-in-out infinite alternate;
+  animation: filterImg 5s ease-in-out infinite alternate;
+}
+
+.page-accueil .gallery > div:first-child img:last-child {
+  animation: filterImg 5s ease-in-out infinite alternate-reverse;
+}
+
+.page-accueil .gallery > div:last-child img {
+  -webkit-animation: moveImg 15s ease-in-out infinite alternate;
+  animation: moveImg 15s ease-in-out infinite alternate;
+}
+
+@media only screen and (max-width: 650px) {
+  .page-accueil .gallery {
+    height: 60vh;
+  }
+}

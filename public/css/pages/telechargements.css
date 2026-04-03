@@ -1,0 +1,123 @@
+.page-telechargements .downloads-page-title {
+  padding: 180px 0 26px;
+}
+
+.page-telechargements .downloads-page-title .page-title {
+  color: #000;
+  text-shadow: none;
+  max-width: none;
+}
+
+.page-telechargements .main-section {
+  height: calc(100vh - 220px);
+  min-height: 520px;
+}
+
+.page-telechargements .telechargements {
+  padding: 150px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-telechargements .telechargements > div {
+  width: 45%;
+  background-color: #303030;
+  padding: 2em;
+  text-align: center;
+}
+
+.page-telechargements .telechargements > div h3,
+.page-telechargements .telechargements > div a {
+  color: #fff;
+  text-transform: initial;
+}
+
+.page-telechargements .telechargements > div span {
+  width: 50px;
+  margin-bottom: 0.5em;
+}
+
+.page-telechargements .telechargements > div span img {
+  filter: invert(1);
+}
+
+.page-telechargements .telechargements > div .btn {
+  background-color: #f5f5f5;
+  color: #303030;
+  margin-top: 2em;
+}
+
+.page-telechargements .telechargements > div .btn:hover {
+  border: 1px solid #f5f5f5;
+  background-color: transparent;
+  color: #f5f5f5;
+}
+
+@media only screen and (max-width: 1090px) {
+  .page-telechargements .downloads-page-title {
+    padding: 130px 100px 24px;
+  }
+
+  .page-telechargements .main-section {
+    height: calc(100vh - 190px);
+    min-height: 420px;
+  }
+
+  .page-telechargements .telechargements {
+    padding: 100px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .page-telechargements .downloads-page-title {
+    padding: 120px 50px 20px;
+  }
+
+  .page-telechargements .telechargements {
+    padding: 80px 50px;
+  }
+
+  .page-telechargements .telechargements > div {
+    padding: 2em 1em;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .page-telechargements .downloads-page-title .page-title {
+    font-size: 72px;
+    line-height: 70px;
+  }
+
+  .page-telechargements .main-section {
+    height: calc(100vh - 170px);
+    min-height: 340px;
+  }
+
+  .page-telechargements .telechargements {
+    padding: 80px 50px;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .page-telechargements .telechargements > div {
+    padding: 2em 1em;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .page-telechargements .downloads-page-title {
+    padding: 105px 30px 14px;
+  }
+
+  .page-telechargements .downloads-page-title .page-title {
+    font-size: 54px;
+    line-height: 54px;
+  }
+
+  .page-telechargements .telechargements {
+    padding: 60px 30px;
+  }
+
+}

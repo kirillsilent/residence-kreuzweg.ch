@@ -1,0 +1,45 @@
+/* Nav menu - narrower Oswald (like original) */
+.site-header .header-nav-link {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Active nav link - underline when on current page */
+.site-header .header-nav-link.router-link-exact-active::after {
+  opacity: 1;
+}
+
+/* Map freight-big-pro to Playfair Display (localized fonts) */
+.tree-columns span,
+.fullImg span {
+  font-family: "Playfair Display", serif !important;
+}
+
+/* Apartments - budget list label width + mobile padding (from #projet .two-columns .ul) */
+/* .page-apartments .two-columns .ul li span:first-child {
+  width: 100px;
+} */
+
+.page-apartments .two-columns .ul li span:last-child {
+  float: inline-end;
+}
+
+@media (max-width: 450px) {
+  .page-apartments .padding-bottom {
+    margin-bottom: 40px;
+  }
+}
+
+/* Partner info styling (Contact) */
+.page-contact .partners-section .partner-info {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4em;
+  color: #404a54;
+  margin-top: 1em;
+}
+.page-contact .partners-section .partner-info a {
+  color: inherit;
+  font-size: inherit;
+}

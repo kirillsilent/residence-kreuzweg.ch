@@ -1,0 +1,121 @@
+.page-situation .icons-container {
+  background-color: #f5f5f5;
+}
+
+.page-situation .icons-container .width {
+  padding: 160px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.page-situation .icons-container .width > div {
+  width: 30%;
+  display: flex;
+  gap: 2em;
+  margin: 50px 0;
+}
+
+.page-situation .icons-container .width > div .icon {
+  width: 60px;
+}
+
+.page-situation .icons-container .width > div .icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.page-situation .icons-container .width > div .txt h3 {
+  font-weight: bold;
+  max-width: 25ch;
+}
+
+.page-situation .icons-container .width > div:nth-child(3) .icon {
+  width: 70px;
+}
+
+.page-situation .icons-container .width > div:last-child .icon {
+  width: 50px;
+}
+
+.page-situation .two-columns .img {
+  cursor: default;
+}
+
+.page-situation .two-columns .img .situation-map-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.page-situation .two-columns .txt ul li {
+  margin-bottom: 0.5em;
+}
+
+@media only screen and (max-width: 1360px) {
+  .page-situation .icons-container .width {
+    padding: 120px 50px;
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  .page-situation .icons-container .width {
+    padding: 100px;
+    align-items: flex-start;
+  }
+
+  .page-situation .icons-container .width > div {
+    margin: 30px 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-situation .icons-container .width > div:nth-child(3) .icon,
+  .page-situation .icons-container .width > div:last-child .icon {
+    width: 50px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .page-situation .icons-container .width > div {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .page-situation .icons-container .width {
+    padding: 50px 10px;
+  }
+
+  .page-situation .icons-container .width > div {
+    width: 50%;
+    gap: 0.8em;
+  }
+
+  .page-situation .icons-container .width > div .txt h3 {
+    max-width: 15ch;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .page-situation .icons-container .width > div .icon {
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .page-situation .icons-container .width > div .txt h3 {
+    max-width: 20ch;
+  }
+
+  .page-situation .fullImg {
+    margin-top: 30px;
+  }
+}

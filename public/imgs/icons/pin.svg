@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><svg id="Warstwa_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.32 24.37">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #9D8255;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1">
+    <path class="cls-1"
+      d="M13.82,7.16C13.82,3.48,10.84,.5,7.16,.5S.5,3.48,.5,7.16c0,1.18,.85,3.25,.85,3.25l5.81,12.75,5.81-12.75s.85-2.07,.85-3.25Z" />
+  </g>
+</svg>

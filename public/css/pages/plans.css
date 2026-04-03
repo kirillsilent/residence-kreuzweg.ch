@@ -1,0 +1,655 @@
+.page-plans {
+  padding: 150px 0;
+}
+
+.page-plans .plans-facade {
+  overflow: hidden;
+  margin: auto;
+  max-width: 100%;
+  position: relative;
+}
+
+.page-plans .plans-facade-interactive {
+  position: relative;
+  width: 100%;
+}
+
+.page-plans .plans-facade-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-plans .plans-facade-overlay,
+.page-plans .plans-facade-hitmap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page-plans .plans-facade-overlay {
+  pointer-events: none;
+  object-fit: fill;
+  z-index: 2;
+}
+
+.page-plans .plans-facade-hitmap {
+  z-index: 3;
+}
+
+.page-plans .plans-facade-hit {
+  fill: rgba(0, 0, 0, 0.001);
+  cursor: pointer;
+}
+
+.page-plans .plans-facade-hit:focus {
+  outline: none;
+}
+
+.page-plans .plans-facade-card {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 240px;
+  background: #ddd;
+  border: 1px solid rgba(64, 64, 64, 0.2);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.page-plans .plans-facade-card-status {
+  color: #f5f5f5;
+  font-family: "Aeonik Pro TRIAL", sans-serif;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 700;
+  padding: 10px 12px;
+}
+
+.page-plans .plans-facade-card.is-available .plans-facade-card-status {
+  background: #3aa84f;
+}
+
+.page-plans .plans-facade-card.is-sold .plans-facade-card-status {
+  background: #aa3737;
+}
+
+.page-plans .plans-facade-card-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 2px 12px 6px 12px;
+}
+
+.page-plans .plans-facade-card-row strong,
+.page-plans .plans-facade-card-row span {
+  font-family: oswald, sans-serif;
+  color: #303030;
+}
+
+.page-plans .plans-facade-card-row strong {
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.page-plans .plans-facade-card-row span {
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 250;
+}
+
+.page-plans .plans-facade .lot {
+  cursor: pointer;
+  transform: all 1s linear;
+}
+
+.page-plans .plans-facade .lot.v:hover .villa {
+  fill: rgba(255, 0, 0, 0.6);
+}
+
+.page-plans .plans-facade .lot.v:hover .jardin {
+  fill: rgba(255, 0, 0, 0.4);
+}
+
+.page-plans .plans-facade .lot.d:hover .villa {
+  fill: rgba(60, 179, 113, 0.7);
+}
+
+.page-plans .plans-facade .lot.d:hover .jardin {
+  fill: rgba(60, 179, 113, 0.5);
+}
+
+.page-plans .plans-facade .lot.r:hover .villa {
+  fill: rgba(255, 165, 0, 0.7);
+}
+
+.page-plans .plans-facade .lot.r:hover .jardin {
+  fill: rgba(255, 165, 0, 0.5);
+}
+
+.page-plans .column-2 {
+  display: none;
+}
+
+.page-plans .d.hover .villa {
+  fill: rgba(60, 179, 113, 0.7);
+}
+
+.page-plans .d.hover .jardin {
+  fill: rgba(60, 179, 113, 0.5);
+}
+
+.page-plans .r.hover .villa {
+  fill: rgba(255, 165, 0, 0.7);
+}
+
+.page-plans .r.hover .jardin {
+  fill: rgba(255, 165, 0, 0.5);
+}
+
+.page-plans .v.hover .villa {
+  fill: rgba(255, 0, 0, 0.6);
+}
+
+.page-plans .v.hover .jardin {
+  fill: rgba(255, 0, 0, 0.4);
+}
+
+.page-plans #tooltip {
+  position: absolute;
+  visibility: hidden;
+  background-color: #f5f5f5;
+  padding: 5px;
+  width: 300px;
+}
+
+.page-plans #tooltip tr:not(:last-child) {
+  border-bottom: 1px solid transparent !important;
+}
+
+.page-plans #tooltip th,
+.page-plans #tooltip td {
+  font-size: 15px !important;
+  text-align: left;
+  background-color: #f5f5f5;
+  color: #303030;
+  font-size: oswald, sans-serif;
+}
+
+.page-plans #tooltip td {
+  width: 60%;
+}
+
+.page-plans #tooltip th {
+  font-weight: 500;
+  width: 40%;
+}
+
+.page-plans #tooltip .column-20,
+.page-plans #tooltip .column-2 {
+  display: none;
+}
+
+.page-plans #tooltip .column-1 {
+  background-color: #303030;
+  color: #f5f5f5 !important;
+}
+
+.page-plans #tooltip > div {
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+.page-plans #tooltip.visible {
+  visibility: visible;
+}
+
+.page-plans #tooltip.visible > div {
+  opacity: 1;
+}
+
+.page-plans .plans-table {
+  margin: 100px 0;
+}
+
+.page-plans .plans-table-note {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: -20px;
+}
+
+.page-plans .plans-table-note-text {
+  font-weight: bold;
+}
+
+.page-plans .plans-table .avp-table {
+  width: 100%;
+  border-spacing: 0 0px;
+}
+
+.page-plans .plans-table .avp-table tbody tr {
+  --row-bg: transparent;
+  background: var(--row-bg);
+}
+
+.page-plans .plans-table .avp-table tbody tr:first-child {
+  --row-bg: #dddddd;
+}
+
+.page-plans .plans-table .avp-table tbody tr:nth-child(even):not(:first-child) {
+  --row-bg: rgba(188, 124, 124, 0.65);
+}
+
+.page-plans .plans-table .avp-table tbody tr:hover {
+  background: var(--row-bg);
+}
+
+.page-plans .plans-table .avp-table th {
+  font-weight: 500;
+  font-size: 18px;
+  color: #303030;
+  line-height: 19px;
+  text-align: center;
+  max-width: 10ch;
+  padding-bottom: 10px;
+  font-family: oswald, sans-serif;
+  border-bottom: 1px solid #a79a8b;
+  cursor: pointer;
+}
+
+.page-plans .plans-table .avp-table th.column-21 {
+  color: #67a71c;
+}
+
+.page-plans .plans-table .avp-table td {
+  color: #303030;
+  font-weight: 250;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  font-family: oswald, sans-serif;
+  border-bottom: 1px solid #a79a8b;
+}
+
+.page-plans .plans-table .avp-table .column-19,
+.page-plans .plans-table .avp-table .column-20 {
+  min-width: 95px;
+}
+
+.page-plans .plans-table .avp-table .plan-lang-link {
+  color: #303030;
+  font-weight: 500;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.page-plans .plans-table .avp-table .d span {
+  color: #67a71c;
+}
+
+.page-plans .plans-table .avp-table .r span {
+  color: #a44d4d;
+}
+
+.page-plans .table-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+.page-plans .table-btns .btn {
+  text-align: center;
+}
+
+#lot-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  transition-duration: 0.6s;
+  transition-delay: 0.6s;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 9999;
+  background-color: #303030;
+}
+
+#lot-container .row {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px;
+  overflow-y: scroll;
+}
+
+#lot-container .row .lot-data-logo {
+  width: 100px;
+  height: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+  margin: 1em 0;
+}
+
+#lot-container .row h2 {
+  margin: 0.5em;
+  text-align: center;
+}
+
+#lot-container .row h2:after {
+  display: none;
+}
+
+#lot-container .row .lot-png {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#lot-container .row .lot-png img {
+  width: 100%;
+  height: 100%;
+}
+
+#lot-container .btn-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+  margin: 2em 0;
+}
+
+#lot-container .btn-container .btn {
+  text-align: center;
+}
+
+#lot-container .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#lot-container.active-lot {
+  transition-delay: 0s;
+  visibility: visible;
+  opacity: 1;
+}
+
+#lot-container.active-lot > div {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.6s;
+}
+
+#lot-container > div {
+  width: 100%;
+  height: 100%;
+  padding: 80px;
+  background-color: #fff;
+  transform: scale(0.8);
+  transition-duration: 0.6s;
+  transition-delay: 0s;
+  opacity: 0;
+}
+
+#lot-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 60%;
+}
+
+#lot-data .avp-table {
+  text-align: left !important;
+  margin: 1.5em 0;
+}
+
+#lot-data .avp-table th {
+  color: #303030;
+  text-align: left !important;
+  font-size: 15px;
+  padding-right: 50px;
+  border-right: 1px solid #303030;
+  border-bottom: 1px solid #a79a8b;
+}
+
+#lot-data .avp-table .column-2 {
+  font-size: 22px;
+  padding-bottom: 20px !important;
+}
+
+#lot-data .avp-table .column-20 {
+  display: none;
+}
+
+#lot-data td {
+  color: #303030;
+}
+
+#lot-data th,
+#lot-data td {
+  padding: 10px;
+  width: 50%;
+}
+
+#lot-data table {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1360px) {
+  .page-plans #tooltip {
+    width: 220px;
+  }
+
+  .page-plans #tooltip td,
+  .page-plans #tooltip th {
+    font-size: 12px !important;
+  }
+
+  .page-plans #tooltip td {
+    width: 50%;
+  }
+
+  .page-plans #tooltip th {
+    width: 50%;
+  }
+
+  #lot-container .btn-container .btn {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  .page-plans {
+    padding: 150px 100px 100px 100px;
+  }
+
+  .page-plans .plans-facade-card {
+    width: 170px;
+  }
+
+  .page-plans .plans-facade-card-status {
+    font-size: 22px;
+  }
+
+  .page-plans .plans-facade-card-row strong {
+    font-size: 18px;
+  }
+
+  .page-plans .plans-facade-card-row span {
+    font-size: 17px;
+  }
+
+  .page-plans .plans-table {
+    margin: 50px 0;
+  }
+
+  .page-plans .plans-table .avp-table td {
+    padding: 0.5em 0;
+  }
+
+  .page-plans .plans-table .avp-table th,
+  .page-plans .plans-table .avp-table td {
+    font-size: 15px;
+  }
+
+  .page-plans .table-btns {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .page-plans .table-btns .btn {
+    min-width: 300px;
+    text-align: center;
+  }
+
+  #lot-container .row {
+    padding: 50px;
+  }
+
+  #lot-container .row h2 {
+    font-size: 30px;
+  }
+
+  #lot-data {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .page-plans {
+    padding: 100px 50px 80px 50px;
+  }
+
+  .page-plans .plans-table .plans-table-inner .column-11 {
+    display: none;
+  }
+
+  #lot-container .btn-container {
+    margin: 2em 0 0 0;
+  }
+
+  #lot-container .btn-container .btn {
+    min-width: 300px;
+  }
+
+  #lot-container .avp-table th,
+  #lot-container .avp-table td {
+    padding: 10px 0;
+    line-height: initial;
+  }
+
+  #lot-container .row {
+    justify-content: initial;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  #lot-container .row > div {
+    width: 100%;
+  }
+
+  #lot-container .row > div:first-child {
+    width: 100%;
+  }
+
+  #lot-data .avp-table th {
+    text-align: center !important;
+  }
+
+  #lot-data th,
+  #lot-data td {
+    padding: 1px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .page-plans .plans-facade-card {
+    top: 10px;
+    left: 10px;
+    width: 130px;
+  }
+
+  .page-plans .plans-facade-card-status {
+    font-size: 18px;
+    padding: 7px 8px;
+  }
+
+  .page-plans .plans-facade-card-row {
+    padding: 1px 8px 4px 8px;
+  }
+
+  .page-plans .plans-facade-card-row strong {
+    font-size: 14px;
+  }
+
+  .page-plans .plans-facade-card-row span {
+    font-size: 14px;
+  }
+
+  .page-plans .plans-table .plans-table-inner .column-21 {
+    width: 50px;
+  }
+
+  .page-plans .plans-table .plans-table-inner .column-19,
+  .page-plans .plans-table .plans-table-inner .column-20 {
+    min-width: 70px;
+  }
+
+  .page-plans .plans-table .plans-table-inner .plan-lang-link {
+    font-size: 12px;
+  }
+
+  .page-plans .plans-table .plans-table-inner .column-7,
+  .page-plans .plans-table .plans-table-inner .column-9 {
+    display: none;
+  }
+
+  .page-plans .plans-table .avp-table td,
+  .page-plans .plans-table .avp-table th {
+    font-size: 13px;
+  }
+
+  .page-plans #lot-data h2 {
+    margin: 1em 0.3em;
+  }
+
+  #lot-container .row .lot-png {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .page-plans {
+    padding: 120px 30px 50px 30px;
+  }
+
+  .page-plans .plans-table .plans-table-inner .column-19,
+  .page-plans .plans-table .plans-table-inner .column-20,
+  .page-plans .plans-table .plans-table-inner .column-7,
+  .page-plans .plans-table .plans-table-inner .column-9 {
+    display: none;
+  }
+
+  #lot-container .row {
+    padding: 30px 20px;
+  }
+
+  #lot-container .row .avp-table td,
+  #lot-container .row .avp-table th {
+    padding: 3px 0;
+  }
+}
