@@ -11,7 +11,7 @@ const messages = {
       apartments: 'Wohnungen',
       gallery: 'Galerie',
       plans: 'Preise und Grundrisse',
-      downloads: 'Downloads',
+      downloads: 'Aktueller Baufortschritt',
       contact: 'Kontakt',
       menu: 'Menue',
       languageSwitcher: 'Sprachumschalter'
@@ -20,11 +20,11 @@ const messages = {
       title: 'PROJEKT',
       heroTitle: 'EXKLUSIVE RESIDENZ',
       heroSubtitle: 'HERZOGENBUCHSEE',
-      lead: 'Architektur, Raum und Lebensqualitaet auf hoechstem Niveau.',
-      p1: 'Eine exklusive Residenz mit nur zwei grosszuegigen Wohneinheiten, konzipiert fuer hoechste Ansprueche an Privatsphaere, Raum und Lebensqualitaet.',
-      p2: 'Die klare, zeitlose Architektur kombiniert hochwertige Materialien wie Holz und Beton mit grosszuegigen Fensterflaechen und schafft ein lichtdurchflutetes, elegantes Wohnambiente. Jede Einheit wurde so gestaltet, dass sie maximale Freiheit in der Nutzung und ein aussergewoehnliches Raumgefuehl bietet.',
-      p3: 'Die Attikawohnung erstreckt sich ueber zwei Ebenen und vermittelt ein exklusives Penthouse-Gefuehl, waehrend die Gartenwohnung mit zusaetzlichem Untergeschoss vielseitige Moeglichkeiten fuer individuelle Wohnkonzepte eroeffnet.',
-      p4: 'Ein seltenes Wohnangebot fuer anspruchsvolle Eigennutzer und Investoren, die Wert auf Qualitaet, Ruhe und nachhaltige Wertbestaendigkeit legen.',
+      lead: 'Eco Premium Residence Kreuzweg',
+      p1: 'Architektur, Raum und Lebensqualitaet auf hoechstem Niveau.',
+      p2: 'Eine exklusive Residenz mit nur zwei grosszuegigen Wohneinheiten, konzipiert fuer hoechste Ansprueche an Privatsphaere, Raum und Lebensqualitaet. Die klare, zeitlose Architektur kombiniert hochwertige Materialien wie Holz und Beton mit grosszuegigen Fensterflaechen und schafft ein lichtdurchflutetes, elegantes Wohnambiente.',
+      p3: 'Besonders hervorzuheben ist die nachhaltige Bauweise: Das Gebaeude wurde unter Einsatz der innovativen EmisCo-Technologie realisiert, einem eigenen Baustoffsystem auf Basis von Miscanthus und Bio-Beton. Diese zukunftsorientierte Konstruktion ermoeglicht eine deutliche Reduktion des CO2-Fussabdrucks, verbindet oekologische Verantwortung mit hoher baulicher Qualitaet und sorgt gleichzeitig fuer ein angenehmes, gesundes Raumklima. Jede Einheit wurde so gestaltet, dass sie maximale Freiheit in der Nutzung und ein aussergewoehnliches Raumgefuehl bietet.',
+      p4: 'Die Attikawohnung erstreckt sich ueber zwei Ebenen und vermittelt ein exklusives Penthouse-Gefuehl, waehrend die Gartenwohnung mit zusaetzlichem Untergeschoss vielseitige Moeglichkeiten fuer individuelle Wohnkonzepte eroeffnet. Ein seltenes Wohnangebot fuer anspruchsvolle Eigennutzer und Investoren, die Wert auf Qualitaet, Ruhe, Nachhaltigkeit und langfristige Wertbestaendigkeit legen.',
       cta: 'Preise und Grundrisse'
     },
     situation: {
@@ -32,24 +32,40 @@ const messages = {
       heading: 'Lage',
       p1: 'Die Residenz am Kreuzweg 2 liegt in Gals, im Herzen des Seelands, und profitiert von einem besonders gefragten Wohnumfeld, das Natur, Ruhe und hervorragende Erreichbarkeit miteinander verbindet.',
       p2: 'Nur wenige Minuten von Neuenburg, Biel und Murten entfernt, bietet sie ein ideales Gleichgewicht zwischen wohnlicher Gelassenheit und der Naehe zu den wichtigsten urbanen Zentren.',
-      p3: 'Abseits von Stoerungen und dem hektischen Rhythmus der Staedte ueberzeugt Gals durch seine friedliche Atmosphaere und seine natuerliche, gut erhaltene Umgebung.',
-      p4: 'Als Dorf mit landwirtschaftlichem Charakter ist Gals von weiten Feldern und offenen Landschaften umgeben und bietet eine seltene und authentische Lebensqualitaet.',
-      p5: 'Geschaetzt fuer sein natuerliches Umfeld und seine hohe Wohnqualitaet bietet die Gemeinde ein ausgewogenes Lebensumfeld, in dem Komfort, Freiraum und Ruhe zusammenkommen und einen besonders privilegierten Wohnort schaffen.',
+      p3: 'Abseits von Stoerungen und dem hektischen Rhythmus der Staedte ueberzeugt Gals durch seine friedliche Atmosphaere und seine natuerliche, gut erhaltene Umgebung. Als Dorf mit landwirtschaftlichem Charakter ist Gals von weiten Feldern und offenen Landschaften umgeben und bietet eine seltene und authentische Lebensqualitaet.',
+      p4: 'Geschaetzt fuer sein natuerliches Umfeld und seine hohe Wohnqualitaet bietet die Gemeinde ein ausgewogenes Lebensumfeld, in dem Komfort, Freiraum und Ruhe zusammenkommen.',
+      infrastructureTitle: 'Distanzen & Infrastruktur',
+      infrastructureItems: [
+        'Primarschule: ca. 100 m',
+        'Restaurant Kreuz (Michelin-Stern): ca. 100 m',
+        'Aldi: ca. 1 km',
+        'Denner: ca. 1.1 km',
+        'Coop: ca. 1.1 km',
+        'Marin Centre: ca. 4.5 km'
+      ],
       mapCta: 'Auf Google Maps'
     },
     apartments: {
       title: 'WOHNUNGEN',
       heading: 'Die Wohnungen',
-      p1: 'Die Wohnungen zeichnen sich durch grosszuegige Raumverhaeltnisse und eine funktionale Konzeption aus, die auf optimalen Wohnkomfort ausgelegt ist. Die weitlaeufigen und lichtdurchfluteten Wohnbereiche integrieren eine offene Kueche und oeffnen sich ueber grossflaechige Verglasungen direkt zu den Aussenraeumen, wodurch eine schoene Kontinuitaet zwischen Innen- und Aussenbereich entsteht. Jede Einheit profitiert von einer harmonischen Grundrissgestaltung, die natuerliches Licht und eine fliessende Raumzirkulation beguenstigt. Die Tagesbereiche schaffen eine einladende Atmosphaere, waehrend die Schlafbereiche Ruhe und Privatsphaere gewaehren. Die Wohnungen verfuegen ueber mehrere Schlafzimmer, darunter ein Elternschlafzimmer, sowie ueber moderne und funktionale Baeder, die den heutigen Anforderungen an Komfort gerecht werden.',
-      brochure: 'Broschuere herunterladen',
-      energyIntro: 'Um den heutigen Standards in Bezug auf Energieeffizienz und Nachhaltigkeit zu entsprechen, ist das Gebaeude mit einem zentralen Heizsystem ausgestattet, das die Waermeversorgung und die Bereitstellung von Warmwasser optimal sicherstellt.',
-      energyDetails: 'Die Innenausstattung bleibt der Wahl der Kaeuferschaft ueberlassen und ermoeglicht eine vollstaendige Personalisierung der Wohnung entsprechend den individuellen Vorlieben und Beduerfnissen.',
-      ctaText: 'Damit Sie Ihr neues Wohnprojekt verwirklichen koennen, beraten wir Sie gerne persoenlich und stellen Ihnen alle weiteren Informationen zur Verfuegung.',
-      ctaButton: 'Kontakt aufnehmen',
-      exteriorTitle: 'AUSSENBEREICHE',
-      exteriorText: 'Die Residenz Kreuzweg fuegt sich harmonisch in ihre natuerliche Umgebung ein und bietet sorgfaeltig gestaltete Aussenbereiche mit hoher Aufenthaltsqualitaet. Die Gestaltung der Aussenanlagen stellt Ruhe, Lebensqualitaet und eine respektvolle Einbindung in die umliegende Landschaft in den Vordergrund.',
-      exteriorText2: 'Die Gruenflaechen vermitteln ein echtes Gefuehl von Offenheit und Gelassenheit und schaffen ein Umfeld, das Entspannung und taegliches Wohlbefinden foerdert.',
-      exteriorText3: 'Die Residenz Kreuzweg zeichnet sich durch eine ruhige und ausgewogene Wohnatmosphaere aus und ist ideal fuer alle, die ein harmonisches Lebensumfeld zwischen Natur und modernem Komfort suchen.'
+      intro1: 'Die Wohnungen ueberzeugen durch grosszuegige Raumverhaeltnisse, klare architektonische Linien und eine Konzeption, die konsequent auf hoechsten Wohnkomfort ausgerichtet ist. Die lichtdurchfluteten Wohn- und Essbereiche mit offener Kueche oeffnen sich ueber grossflaechige Verglasungen direkt zu den Aussenraeumen und schaffen eine fliessende Verbindung zwischen Innen- und Aussenbereich.',
+      intro2: 'Die durchdachten Grundrisse ermoeglichen maximale Flexibilitaet in der Nutzung und vermitteln ein aussergewoehnliches Raumgefuehl. Waehrend die Wohnbereiche Offenheit und Weite ausstrahlen, bieten die Schlafbereiche gezielte Rueckzugsorte mit einem hohen Mass an Privatsphaere. Hochwertige Baeder runden das Gesamtbild ab und erfuellen die Ansprueche an modernes, komfortables Wohnen.',
+      buildTitle: 'Ein entscheidender Unterschied: die Bauweise',
+      buildIntro: 'Im Gegensatz zu konventionellen Neubauten basiert dieses Projekt auf der innovativen EmisCo-Technologie, einem eigenen Baustoffsystem aus Miscanthus und Bio-Beton.',
+      buildLead: 'Diese Bauweise definiert den Wohnkomfort neu.',
+      buildFeatures: [
+        'Natuerliche Regulierung von Luft und Feuchtigkeit',
+        'Ganzjaehrig stabiles und angenehmes Raumklima',
+        'Effiziente Bindung und Reduktion von CO2',
+        'Deutlich verbesserte Luftqualitaet im Innenraum'
+      ],
+      buildOutro1: 'Im Ergebnis entsteht ein Innenklima, das sich klar von herkoemmlichen Bauweisen abhebt: konstant, ausgeglichen und spuerbar hochwertig.',
+      buildOutro2: 'Die physikalischen Eigenschaften der Materialien wirken vergleichbar mit einer hochwertigen Klimaanlage, jedoch vollstaendig natuerlich, energieeffizient und ohne kuenstliche Steuerung.',
+      buildOutro3: 'Das Resultat ist ein Wohngefuehl, das man unmittelbar wahrnimmt: frische, reine Luft, aehnlich der Qualitaet eines natuerlichen Umfelds.',
+      technologyTitle: 'Technologie trifft Komfort',
+      technologyText: 'Ergaenzt wird dieses Konzept durch ein modernes Lueftungssystem von Zehnder, das kontinuierlich Frischluft zufuehrt und den Luftaustausch optimal gewaehrleistet. Die Kombination aus intelligenter Bauweise und moderner Technik schafft ein Wohnklima auf einem Niveau, das in dieser Form im klassischen Wohnbau selten erreicht wird.',
+      customizationTitle: 'Individuelle Gestaltung',
+      customizationText: 'Die Innenausstattung bleibt bewusst offen und bietet der Kaeuferschaft maximale Freiheit in der Gestaltung. So entsteht ein Zuhause, das nicht nur architektonisch ueberzeugt, sondern auch exakt den persoenlichen Vorstellungen entspricht.'
     },
     gallery: {
       title: 'Galerie'
@@ -75,13 +91,13 @@ const messages = {
       }
     },
     downloads: {
-      title: 'Downloads',
+      title: 'Aktueller Baufortschritt',
       brochure: 'Broschuere',
       plans: 'Grundrisse',
       button: 'Herunterladen'
     },
     contact: {
-      title: 'So erreichen Sie uns',
+      title: 'Kontakt',
       writeUs: 'Schreiben Sie uns',
       lastName: 'Ihr Nachname*',
       firstName: 'Ihr Vorname*',
@@ -118,7 +134,7 @@ const messages = {
       apartments: 'Appartements',
       gallery: 'Galerie',
       plans: 'Plans et prix',
-      downloads: 'Telechargements',
+      downloads: 'Etat actuel de la construction',
       contact: 'Contact',
       menu: 'Menu',
       languageSwitcher: 'Selecteur de langue'
@@ -127,36 +143,52 @@ const messages = {
       title: 'PROJET',
       heroTitle: 'RESIDENCE EXCLUSIVE',
       heroSubtitle: 'HERZOGENBUCHSEE',
-      lead: 'Architecture, espace et qualite de vie au plus haut niveau.',
-      p1: 'Une residence exclusive composee de deux logements seulement, concue pour les plus hautes exigences en matiere d intimite, d espace et de qualite de vie.',
-      p2: 'L architecture claire et intemporelle associe des materiaux de qualite tels que le bois et le beton a de larges surfaces vitrees, creant un cadre de vie lumineux et elegant. Chaque unite est pensee pour offrir une grande liberte d amenagement et une sensation d espace remarquable.',
-      p3: 'L appartement en attique se deploie sur deux niveaux et procure une veritable sensation de penthouse, tandis que l appartement avec jardin et sous-sol offre de nombreuses possibilites d amenagement.',
-      p4: 'Une offre rare pour les proprietaires exigeants et les investisseurs qui recherchent qualite, tranquillite et valeur durable.',
+      lead: 'Eco Premium Residence Kreuzweg',
+      p1: 'Architecture, espace et qualite de vie au plus haut niveau.',
+      p2: 'Une residence exclusive composee de seulement deux logements genereux, concue pour repondre aux plus hautes exigences en matiere d intimite, d espace et de qualite de vie. L architecture claire et intemporelle associe des materiaux nobles comme le bois et le beton a de vastes surfaces vitrees afin de creer une atmosphere lumineuse et elegante.',
+      p3: 'La construction durable constitue un atout majeur du projet : le batiment a ete realise avec la technologie innovante EmisCo, un systeme constructif proprietaire base sur le miscanthus et le bio-beton. Cette approche tournee vers l avenir permet de reduire sensiblement l empreinte carbone, d allier responsabilite ecologique et haute qualite constructive, tout en garantissant un climat interieur sain et agreable. Chaque unite a ete pensee pour offrir une grande liberte d usage et une sensation d espace exceptionnelle.',
+      p4: 'L appartement en attique se deploie sur deux niveaux et procure une veritable sensation de penthouse, tandis que l appartement avec jardin et sous-sol supplementaire ouvre de nombreuses possibilites pour des concepts de vie personnalises. Une offre residentielle rare pour des proprietaires occupants et des investisseurs exigeants, attaches a la qualite, au calme, a la durabilite et a une valorisation patrimoniale sur le long terme.',
       cta: 'Plans et prix'
     },
     situation: {
       title: 'SITUATION',
       heading: 'Situation',
-      p1: 'Situee a Gals, au coeur de la region du Seeland, la residence du Kreuzweg 2 beneficie d un cadre de vie particulierement recherche, alliant nature, tranquillite et excellente accessibilite.',
+      p1: 'La residence du Kreuzweg 2 se situe a Gals, au coeur du Seeland, et profite d un environnement residentiel tres recherche, alliant nature, calme et excellente accessibilite.',
       p2: 'A seulement quelques minutes de Neuchatel, Bienne et Morat, elle offre un equilibre ideal entre serenite residentielle et proximite des principaux centres urbains.',
-      p3: 'A l ecart des nuisances et du rythme soutenu des villes, Gals seduit par son atmosphere paisible et son environnement naturel preserve.',
-      p4: 'Village a caractere agricole, Gals est entoure de vastes etendues de champs et de paysages ouverts, offrant une qualite de vie rare et authentique.',
-      p5: 'Appreciee pour son cadre naturel et sa douceur de vivre, la commune propose un environnement equilibre, ou confort, espace et tranquillite se conjuguent pour creer un lieu de vie privilegie.',
+      p3: 'A l ecart des nuisances et du rythme soutenu des villes, Gals seduit par son atmosphere paisible et son environnement naturel preserve. Avec son caractere agricole, le village est entoure de vastes champs et de paysages ouverts, offrant une qualite de vie rare et authentique.',
+      p4: 'Appreciee pour son cadre naturel et sa grande qualite de vie, la commune propose un environnement equilibre ou confort, espace et tranquillite se rejoignent.',
+      infrastructureTitle: 'Distances & infrastructures',
+      infrastructureItems: [
+        'Ecole primaire : env. 100 m',
+        'Restaurant Kreuz (etoile Michelin) : env. 100 m',
+        'Aldi : env. 1 km',
+        'Denner : env. 1.1 km',
+        'Coop : env. 1.1 km',
+        'Marin Centre : env. 4.5 km'
+      ],
       mapCta: 'Voir sur Google Maps'
     },
     apartments: {
       title: 'APPARTEMENTS',
       heading: 'Les appartements',
-      p1: 'Les appartements se distinguent par des volumes genereux et une conception fonctionnelle, pensee pour un confort de vie optimal. Les espaces de vie, spacieux et lumineux, integrent une cuisine ouverte et s ouvrent sur de larges baies vitrees, offrant un acces direct aux espaces exterieurs et une belle continuite entre interieur et exterieur. Chaque logement beneficie d un amenagement harmonieux, favorisant la lumiere naturelle et une circulation fluide des espaces. Les zones de jour sont concues pour creer une atmosphere conviviale, tandis que les espaces de nuit garantissent calme et intimite. Les appartements disposent de plusieurs chambres, dont une chambre parentale, ainsi que de salles de bain modernes et fonctionnelles, adaptees aux exigences actuelles en matiere de confort.',
-      brochure: 'Telecharger la brochure',
-      energyIntro: 'Afin de repondre aux standards actuels en matiere d efficacite energetique et de durabilite, le batiment est equipe d un systeme de chauffage centralise assurant la production de chaleur et d eau chaude sanitaire de maniere optimale.',
-      energyDetails: 'Les finitions interieures sont laissees au choix de l acquereur, permettant une personnalisation complete du logement selon les preferences et les besoins de chacun.',
-      ctaText: 'Pour vous accompagner dans la realisation de votre nouveau projet de vie, nous vous conseillons volontiers et vous fournissons toutes les informations complementaires.',
-      ctaButton: 'Nous contacter',
-      exteriorTitle: 'EXTERIEURS',
-      exteriorText: 'La Residence Kreuzweg s integre harmonieusement dans son environnement naturel, offrant des espaces exterieurs soignes et agreables a vivre. Les amenagements exterieurs privilegient la tranquillite, la qualite de vie et une integration respectueuse du paysage environnant.',
-      exteriorText2: 'Les espaces verts apportent une veritable sensation d ouverture et de serenite, creant un cadre propice a la detente et au bien-etre au quotidien.',
-      exteriorText3: 'La Residence Kreuzweg se distingue par une atmosphere residentielle calme et equilibree, ideale pour celles et ceux recherchant un cadre de vie harmonieux, entre nature et confort moderne.'
+      intro1: 'Les appartements seduisent par leurs volumes genereux, leurs lignes architecturales epurees et une conception resolument orientee vers un confort d habitation de tres haut niveau. Les espaces de vie et de repas, baignés de lumiere et prolonges par une cuisine ouverte, s ouvrent largement sur les exterieurs grace a de vastes surfaces vitrees et instaurent une transition fluide entre interieur et exterieur.',
+      intro2: 'Les plans soigneusement etudies offrent une grande flexibilite d usage et une sensation d espace remarquable. Alors que les espaces de vie expriment ouverture et amplitude, les zones nuit proposent de veritables retraits avec un haut niveau d intimite. Des salles de bain haut de gamme viennent completer l ensemble et repondent pleinement aux attentes d un habitat moderne et confortable.',
+      buildTitle: 'Une difference decisive : la construction',
+      buildIntro: 'Contrairement aux constructions neuves conventionnelles, ce projet repose sur la technologie innovante EmisCo, un systeme constructif proprietaire compose de miscanthus et de bio-beton.',
+      buildLead: 'Cette methode de construction redefinit le confort de vie.',
+      buildFeatures: [
+        'Regulation naturelle de l air et de l humidite',
+        'Climat interieur stable et agreable toute l annee',
+        'Fixation et reduction efficaces du CO2',
+        'Qualite de l air interieur nettement amelioree'
+      ],
+      buildOutro1: 'Le resultat est un climat interieur qui se distingue clairement des constructions traditionnelles : constant, equilibre et perceptiblement plus qualitatif.',
+      buildOutro2: 'Les proprietes physiques des materiaux agissent de maniere comparable a une climatisation haut de gamme, mais de facon entierement naturelle, energiquement efficace et sans pilotage artificiel.',
+      buildOutro3: 'Il en resulte une sensation d habitat que l on percoit immediatement : un air frais et pur, proche de la qualite offerte par un environnement naturel.',
+      technologyTitle: 'La technologie au service du confort',
+      technologyText: 'Ce concept est complete par un systeme de ventilation moderne signe Zehnder, qui apporte en continu de l air frais et assure un renouvellement optimal de l air. L association d une construction intelligente et d une technique contemporaine cree un climat interieur d un niveau rarement atteint dans l habitat classique.',
+      customizationTitle: 'Amenagement sur mesure',
+      customizationText: 'Les finitions interieures sont volontairement laissees ouvertes et offrent a l acquereur une liberte maximale dans l amenagement. Il en resulte un lieu de vie convaincant sur le plan architectural et parfaitement adapte aux attentes personnelles.'
     },
     gallery: {
       title: 'Galerie'
@@ -182,7 +214,7 @@ const messages = {
       }
     },
     downloads: {
-      title: 'Telechargements',
+      title: 'Etat actuel de la construction',
       brochure: 'Brochure',
       plans: 'Plans',
       button: 'Telecharger'

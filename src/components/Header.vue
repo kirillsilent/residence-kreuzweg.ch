@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header__inner">
       <router-link to="/projet" class="header__logo">
-        <span class="header__logo-text">Residence des Muses</span>
+        <span class="header__logo-text">Residence Kreuzweg</span>
       </router-link>
       <nav class="header__nav">
         <router-link to="/projet" class="header__link">{{ t('nav.project') }}</router-link>
@@ -10,7 +10,7 @@
         <router-link to="/appartements" class="header__link">{{ t('nav.apartments') }}</router-link>
         <router-link to="/galerie" class="header__link">{{ t('nav.gallery') }}</router-link>
         <router-link to="/plans" class="header__link">{{ t('nav.plans') }}</router-link>
-        <router-link to="/telechargements" class="header__link">{{ t('nav.downloads') }}</router-link>
+        <router-link to="/baufortschritt" class="header__link">{{ t('nav.downloads') }}</router-link>
         <router-link to="/contact" class="header__link">{{ t('nav.contact') }}</router-link>
       </nav>
       <button
@@ -29,7 +29,7 @@
       <router-link to="/appartements" class="header__link">{{ t('nav.apartments') }}</router-link>
       <router-link to="/galerie" class="header__link">{{ t('nav.gallery') }}</router-link>
       <router-link to="/plans" class="header__link">{{ t('nav.plans') }}</router-link>
-      <router-link to="/telechargements" class="header__link">{{ t('nav.downloads') }}</router-link>
+      <router-link to="/baufortschritt" class="header__link">{{ t('nav.downloads') }}</router-link>
       <router-link to="/contact" class="header__link">{{ t('nav.contact') }}</router-link>
     </nav>
   </header>

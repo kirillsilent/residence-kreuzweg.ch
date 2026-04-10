@@ -13,7 +13,7 @@
       </div>
       <div class="width header-inner">
         <div class="logo header-logo">
-          <router-link to="/projet"><img class="header-logo-image" :src="baseUrl + 'imgs/logos/logo-rewus-main.svg'" alt="Residence de Muses logo" /></router-link>
+          <router-link to="/projet"><img class="header-logo-image" :src="baseUrl + 'imgs/logos/logo-rewus-main.svg'" alt="Residence Kreuzweg logo" /></router-link>
         </div>
         <nav class="menu header-nav">
           <ul class="menu header-nav-list">
@@ -22,7 +22,7 @@
             <li><router-link to="/appartements" class="header-nav-link">{{ t('nav.apartments') }}</router-link></li>
             <li><router-link to="/galerie" class="header-nav-link">{{ t('nav.gallery') }}</router-link></li>
             <li><router-link to="/plans" class="header-nav-link">{{ t('nav.plans') }}</router-link></li>
-            <li><router-link to="/telechargements" class="header-nav-link">{{ t('nav.downloads') }}</router-link></li>
+            <li><router-link to="/baufortschritt" class="header-nav-link">{{ t('nav.downloads') }}</router-link></li>
             <li><router-link to="/contact" class="header-nav-link">{{ t('nav.contact') }}</router-link></li>
           </ul>
         </nav>
@@ -33,7 +33,7 @@
 
     <div id="loading" class="loading-screen" :class="{ hidden: loaded }">
       <div class="loading-inner">
-        <img :src="baseUrl + 'imgs/logos/logo-rewus-main.svg'" alt="Residence de Muses logo" />
+        <img :src="baseUrl + 'imgs/logos/logo-rewus-main.svg'" alt="Residence Kreuzweg logo" />
       </div>
     </div>
 
@@ -41,7 +41,14 @@
       <router-view />
     </main>
 
-    <div id="fullscreenMap" class="fullscreen fullscreen-map" :class="{ active: fullscreenVisible }" @click.self="closeFullscreen">
+    <div
+      id="fullscreenMap"
+      class="fullscreen fullscreen-map"
+      :class="{ active: fullscreenVisible }"
+      @click.self="closeFullscreen"
+      @touchstart="onFullscreenTouchStart"
+      @touchend="onFullscreenTouchEnd"
+    >
       <div class="full-img-wrap">
         <div class="full-border"></div>
         <div id="full-img" class="fullscreen-img"><img :src="currentFullscreenImage" alt="Fullscreen gallery image" /></div>
@@ -53,8 +60,8 @@
     <footer class="site-footer">
       <div class="width footer-inner">
         <div class="footer-details">
-          <div><p>ESM TECHNOLOGIE GMBH<br />Britschenmattstrasse 29</p></div>
-          <div><a href="https://www.lrm-services.ch" target="_blank"><img :src="baseUrl + 'imgs/logos/logo-rewus.svg'" alt="Rewus GmbH logo" /></a></div>
+          <div><p>ESM TECHNOLOGIE GMBH<br />Britschenmattstrasse 29<br />3238 Gals</p></div>
+          <div><router-link to="/projet"><img :src="baseUrl + 'imgs/logos/footer.svg'" alt="Rewus GmbH logo" /></router-link></div>
           <div><p><a href="mailto:info@esm-technologie.ch">info@esm-technologie.ch</a><br /><a href="tel:+41795760405">+41 79 576 04 05</a></p></div>
         </div>
       </div>
@@ -75,9 +82,12 @@ const loaded = ref(false)
 const fullscreenVisible = ref(false)
 const fullscreenImages = ref([])
 const fullscreenIndex = ref(0)
+const fullscreenTouchStartX = ref(null)
+const fullscreenTouchStartY = ref(null)
 const { language, setLanguage, t } = useI18n()
+let cleanupHeaderInteractions = null
 
-const SITE_NAME = 'Residence des Muses'
+const SITE_NAME = 'Residence Kreuzweg'
 const SITE_URL = 'https://residence-des-muses.ch'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/imgs/vis/1-night.webp`
 
@@ -134,12 +144,12 @@ const seoByRoute = {
     de: {
       title: 'Galerie',
       description:
-        'Visualisierungen und Innenansichten der Residence des Muses: Architektur, Wohnraeume und Aussenbereiche.',
+        'Visualisierungen und Innenansichten der Residence Kreuzweg: Architektur, Wohnraeume und Aussenbereiche.',
     },
     fr: {
       title: 'Galerie',
       description:
-        'Galerie des visualisations et espaces de vie de la Residence des Muses: interieur, architecture et exterieur.',
+        'Galerie des visualisations et espaces de vie de la Residence Kreuzweg: interieur, architecture et exterieur.',
     },
   },
   '/plans': {
@@ -154,28 +164,28 @@ const seoByRoute = {
         'Plans, surfaces, statuts et informations de prix des appartements, avec telechargement des documents.',
     },
   },
-  '/telechargements': {
+  '/baufortschritt': {
     de: {
-      title: 'Downloads',
+      title: 'Aktueller Baufortschritt',
       description:
-        'Broschuere und Planunterlagen der Residence des Muses als PDF zum direkten Download.',
+        'Broschuere und Planunterlagen der Residence Kreuzweg als PDF zum direkten Download.',
     },
     fr: {
-      title: 'Telechargements',
+      title: 'Etat actuel de la construction',
       description:
-        'Brochure et plans de la Residence des Muses en PDF, disponibles en telechargement direct.',
+        'Brochure et plans de la Residence Kreuzweg en PDF, disponibles en telechargement direct.',
     },
   },
   '/contact': {
     de: {
       title: 'Kontakt',
       description:
-        'Kontaktieren Sie das Team der Residence des Muses fuer Beratung, Verfuegbarkeit und weitere Informationen.',
+        'Kontaktieren Sie das Team der Residence Kreuzweg fuer Beratung, Verfuegbarkeit und weitere Informationen.',
     },
     fr: {
       title: 'Contact',
       description:
-        'Contactez l equipe de la Residence des Muses pour disponibilites, conseils et informations complementaires.',
+        'Contactez l equipe de la Residence Kreuzweg pour disponibilites, conseils et informations complementaires.',
     },
   },
 }
@@ -285,6 +295,31 @@ function onFullscreenKeydown(event) {
   if (event.key === 'ArrowRight') showNextFullscreenImage()
 }
 
+function onFullscreenTouchStart(event) {
+  const touch = event.changedTouches?.[0]
+  if (!touch) return
+  fullscreenTouchStartX.value = touch.clientX
+  fullscreenTouchStartY.value = touch.clientY
+}
+
+function onFullscreenTouchEnd(event) {
+  if (!fullscreenVisible.value || fullscreenImages.value.length < 2) return
+
+  const touch = event.changedTouches?.[0]
+  if (!touch || fullscreenTouchStartX.value === null || fullscreenTouchStartY.value === null) return
+
+  const deltaX = touch.clientX - fullscreenTouchStartX.value
+  const deltaY = touch.clientY - fullscreenTouchStartY.value
+
+  fullscreenTouchStartX.value = null
+  fullscreenTouchStartY.value = null
+
+  if (Math.abs(deltaX) < 40 || Math.abs(deltaX) < Math.abs(deltaY)) return
+
+  if (deltaX < 0) showNextFullscreenImage()
+  if (deltaX > 0) showPrevFullscreenImage()
+}
+
 let slideIndex = 1
 function changeImg(n) {
   const x = document.getElementsByClassName('mySlides')
@@ -321,13 +356,17 @@ function initImgShow() {
 
 function initHeaderInteractions() {
   if (typeof window === 'undefined') return
+  if (typeof cleanupHeaderInteractions === 'function') cleanupHeaderInteractions()
+
   const header = document.querySelector('header')
   const menuBtn = document.getElementById('menu-btn')
   const menu = header ? header.querySelector('.menu') : null
   if (!header || !menuBtn || !menu) return
 
+  const shouldUseSolidHeader = () => route.path === '/appartements'
+
   const onScroll = () => {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 50 || shouldUseSolidHeader()) {
       header.classList.add('headerActive')
       menuBtn.classList.add('headerActive-menu')
     } else {
@@ -339,20 +378,29 @@ function initHeaderInteractions() {
   onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
 
-  menuBtn.addEventListener('click', () => {
+  const onMenuButtonClick = () => {
     menu.classList.toggle('active')
     menuBtn.classList.toggle('active')
     header.classList.toggle('headerActive', menuBtn.classList.contains('active'))
-  })
+  }
 
-  menu.addEventListener('click', (event) => {
+  const onMenuClick = (event) => {
     const target = event.target
     if (!(target instanceof Element)) return
     if (!target.closest('a')) return
     menu.classList.remove('active')
     menuBtn.classList.remove('active')
-    header.classList.remove('headerActive')
-  })
+    onScroll()
+  }
+
+  menuBtn.addEventListener('click', onMenuButtonClick)
+  menu.addEventListener('click', onMenuClick)
+
+  cleanupHeaderInteractions = () => {
+    window.removeEventListener('scroll', onScroll)
+    menuBtn.removeEventListener('click', onMenuButtonClick)
+    menu.removeEventListener('click', onMenuClick)
+  }
 }
 
 function runAnimations() {
@@ -381,6 +429,7 @@ onMounted(() => {
     closeFullscreen()
     setTimeout(() => {
       initSliderSafe()
+      initHeaderInteractions()
       runAnimations()
     }, 50)
   })
@@ -396,6 +445,8 @@ onUnmounted(() => {
     window.removeEventListener('keydown', onFullscreenKeydown)
     window.openGalleryFullscreen = undefined
   }
+
+  if (typeof cleanupHeaderInteractions === 'function') cleanupHeaderInteractions()
 })
 </script>
 

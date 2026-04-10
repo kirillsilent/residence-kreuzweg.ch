@@ -2,9 +2,7 @@
   <main id="galerie" class="page page-galerie">
     <section class="main-section">
       <div class="slider-container">
-        <img class="mySlides" :src="baseUrl + 'imgs/vis/15.webp'" alt="Residence de Muses" />
-        <img class="mySlides" :src="baseUrl + 'imgs/vis/9.webp'" alt="Residence de Muses" />
-        <img class="mySlides" :src="baseUrl + 'imgs/vis/13.webp'" alt="Residence de Muses" />
+        <img v-for="img in heroSlides" :key="img" class="mySlides" :src="img" alt="Residence Kreuzweg" />
       </div>
       <div class="txt">
         <div>
@@ -20,17 +18,19 @@
     </section>
 
     <section class="galerie-container width">
-      <div class="title">
+      <div class="title animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .05s forwards">
         <h2>{{ t('gallery.title') }}</h2>
       </div>
       <div class="galerie-imgs">
         <div
           v-for="(img, i) in galleryImgs"
           :key="i"
+          class="animate"
+          :data-animate="`animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) ${Math.min(0.05 + i * 0.03, 0.35).toFixed(2)}s forwards`"
           :data-src="img"
           @click="openFullscreen(i)"
         >
-          <img :src="img" alt="Residence de Muses" />
+          <img :src="img" alt="Residence Kreuzweg" />
         </div>
       </div>
     </section>
@@ -42,6 +42,20 @@ import { inject, computed } from 'vue'
 import { useI18n } from '../composables/useI18n'
 const baseUrl = inject('baseUrl', '/')
 const { t } = useI18n()
+
+function publicImageUrl(relativePath) {
+  return encodeURI(`${baseUrl}${relativePath}`)
+}
+
+// Hero slider: take images from `public/imgs/gallery`.
+const heroImgs = computed(() => [
+  publicImageUrl('imgs/gallery/12 9.png'),
+  publicImageUrl('imgs/gallery/13 1.png'),
+  publicImageUrl('imgs/gallery/6 41.png'),
+  publicImageUrl('imgs/gallery/7 (3) 1.png'),
+])
+
+// Grid below: keep the original full set from `public/imgs/galerie`.
 const galleryImgs = computed(() => [
   baseUrl + 'imgs/galerie/galerie-01-bedroom-main.webp',
   baseUrl + 'imgs/galerie/galerie-02-bedroom-front.webp',
@@ -68,6 +82,12 @@ const galleryImgs = computed(() => [
   baseUrl + 'imgs/galerie/galerie-23-living-to-kitchen.webp',
   baseUrl + 'imgs/galerie/galerie-24-entrance-console.webp',
 ])
+
+const heroSlides = computed(() => {
+  const imgs = heroImgs.value
+  if (imgs.length >= 3) return [imgs[2], imgs[0], imgs[1]].filter(Boolean)
+  return imgs.slice(0, 3).filter(Boolean)
+})
 
 function changeImg(n) {
   if (typeof window !== 'undefined' && window.changeImg) window.changeImg(n)

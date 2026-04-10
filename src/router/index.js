@@ -13,7 +13,8 @@ export const routes = [
   { path: '/appartements', component: Apartments },
   { path: '/galerie', component: Galerie },
   { path: '/plans', component: Plans },
-  { path: '/telechargements', component: Telechargements },
+  { path: '/telechargements', redirect: '/baufortschritt' },
+  { path: '/baufortschritt', component: Telechargements },
   { path: '/contact', component: Contact },
 ]
 

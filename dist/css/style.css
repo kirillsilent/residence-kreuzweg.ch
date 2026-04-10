@@ -24,11 +24,11 @@ p,
 li,
 a {
   font-size: 18px;
-  line-height: 24px;
-  color: #404a54;
+  line-height: 19px;
+  color: #17191d;
   text-decoration: none;
   font-family: "Oswald", sans-serif;
-  font-weight: 250;
+  font-weight: 350;
   letter-spacing: 1px;
 }
 
@@ -36,7 +36,7 @@ h1,
 h2,
 h3 {
   text-transform: uppercase;
-  font-family: "Aeonik Pro TRIAL", sans-serif;
+  font-family: "freight-big-pro", "Playfair Display", serif;
 }
 
 h1 {
@@ -51,10 +51,10 @@ h1 {
 }
 
 .page-title {
-  font-family: "Bergamasco Bold", serif;
-  font-weight: 700;
+  font-family: "freight-big-pro", "Playfair Display", serif !important;
+  font-weight: 500;
   font-style: normal;
-  font-size: 96px;
+  font-size: 64px;
   line-height: 92px;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -173,10 +173,8 @@ img {
   z-index: 999;
   position: fixed;
   transition: all 0.3s ease-in-out;
-  background: rgba(235, 242, 248, 0.26);
-  -webkit-backdrop-filter: blur(14px) saturate(125%);
-  backdrop-filter: blur(14px) saturate(125%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.38);
+  background: transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .site-header .header-contact {
@@ -218,8 +216,9 @@ img {
 }
 
 .site-header .header-logo img {
-  width: 100%;
+  width: 54%;
   height: 100%;
+  margin-top: 5px;
   -o-object-fit: contain;
   object-fit: contain;
 }
@@ -246,8 +245,8 @@ img {
   text-align: center;
   color: #1c2125;
   font-family: "Oswald", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 200;
+  font-size: 18px;
   line-height: 20px;
   letter-spacing: 1px;
   position: relative;
@@ -328,9 +327,8 @@ img {
 
 .headerActive {
   transition: all 0.3s ease-in-out;
-  background: transparent;
-  -webkit-backdrop-filter: blur(16px) saturate(135%);
-  backdrop-filter: blur(16px) saturate(135%);
+  background: rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
 }
 
 .btn {
@@ -406,17 +404,18 @@ img {
 }
 
 .main-section .slider-controlers {
-  cursor: pointer;
   position: absolute;
-  left: 0%;
+  inset: 0;
   top: 50%;
   z-index: 444;
   transform: translateY(-50%);
-  width: 100vw;
+  width: 100%;
+  padding: 0 24px;
+  pointer-events: none;
 }
 
 .main-section .slider-controlers .slider-arrows {
-  margin-right: 0.5vw;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -426,6 +425,7 @@ img {
 .main-section .slider-controlers .slider-arrows span {
   width: 60px;
   height: 60px;
+  flex-shrink: 0;
   font-size: 32px;
   color: #303030;
   background: rgba(255, 255, 255, 0.6);
@@ -434,14 +434,15 @@ img {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .small-logo {
   display: inline-block;
   width: 80px;
   height: auto;
-  margin-left: 1em;
-  margin-bottom: 1em;
+  /* margin-left: 1em;
+  margin-bottom: 1em; */
   -o-object-fit: contain;
   object-fit: contain;
 }
@@ -463,12 +464,12 @@ img {
 .tree-columns > div span {
   font-style: italic;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 31px;
   line-height: 120%;
   font-family: freight-big-pro, serif;
   color: #a79a8b;
   letter-spacing: 0.08em;
-  padding: 16px 0;
+  padding: 62px 0;
 }
 
 .tree-columns > div .icon-txt {
@@ -513,7 +514,7 @@ img {
 }
 
 .two-columns > div.txt ul {
-  margin-left: 2em;
+  /* margin-left: 2em; */
 }
 
 .two-columns > div.txt h2 {
@@ -523,7 +524,8 @@ img {
 }
 
 .two-columns > div.txt .btn {
-  margin: 20px auto;
+  /* margin: 20px auto; */
+  margin-top: 20px;
   font-weight: 500;
   width: 250px;
   text-align: center;
@@ -572,6 +574,42 @@ img {
   color: #f5f5f5;
   max-width: 50ch;
   margin: 1em auto 2em;
+}
+
+.page-apartments .extra-txt > div h3 {
+  font-family: "Oswald Header", "Oswald", sans-serif;
+}
+
+.extra-txt > div p {
+  color: #f5f5f5;
+  max-width: 58ch;
+  margin: 0 auto;
+}
+
+.page-apartments .apartments-lead {
+  font-weight: 500;
+}
+
+.page-apartments .apartments-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2em;
+}
+
+.page-apartments .apartments-feature-list li {
+  margin-bottom: 0.75em;
+  padding-left: 20px;
+  position: relative;
+}
+
+.page-apartments .apartments-feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 1px;
+  background: #303030;
 }
 
 .extra-txt > div .btn {
@@ -822,6 +860,7 @@ img {
 
 .fullscreen-map {
   background-color: #fff;
+  touch-action: pan-y;
 }
 
 .fullscreen-map img {
@@ -873,6 +912,10 @@ img {
 
 .site-footer .footer-details > div img {
   width: 100px;
+}
+
+.site-footer .footer-details > div:nth-child(2) img {
+  width: 150px;
 }
 
 .site-footer .avp-details {
@@ -969,6 +1012,28 @@ img {
 @keyframes animContent {
   from {
     transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animFloatUp {
+  from {
+    transform: translateY(72px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animFloatUp {
+  from {
+    transform: translateY(72px);
     opacity: 0;
   }
   to {
@@ -1126,9 +1191,8 @@ img {
   }
 
   .headerActive {
-    background: transparent;
-    -webkit-backdrop-filter: blur(12px) saturate(120%);
-    backdrop-filter: blur(12px) saturate(120%);
+    background: rgba(255, 255, 255, 0.78);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.85);
   }
 
   .menu-btn {
@@ -1256,6 +1320,10 @@ img {
     font-size: 28px;
   }
 
+  .main-section .slider-controlers {
+    padding: 0 16px;
+  }
+
   .main-section .txt > div {
     width: 100%;
   }
@@ -1378,7 +1446,7 @@ img {
   }
 
   h1 {
-    font-size: 38px;
+    font-size: 42px !important;
     line-height: 38px;
   }
 

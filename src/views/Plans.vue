@@ -1,8 +1,8 @@
-﻿<template>
+<template>
   <main id="plans" class="page page-plans width">
-    <div id="facade" class="plans-facade">
+    <div id="facade" class="plans-facade animate" data-animate="animFloatUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) .05s forwards">
       <div ref="facadeInteractiveRef" class="plans-facade-interactive" @mouseleave="clearActiveZone">
-        <img :src="baseUrl + 'imgs/photomontage-small.webp'" alt="Residence des Muses facade view" class="plans-facade-image" />
+        <img :src="baseUrl + 'imgs/photomontage-small.webp'" alt="Residence Kreuzweg facade view" class="plans-facade-image" />
         <img
           v-if="activeZone"
           :src="baseUrl + activeZone.overlay"
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div id="facade-table" class="plans-table">
+    <div id="facade-table" class="plans-table animate" data-animate="animFloatUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) .12s forwards">
       <div class="table plans-table-inner">
         <table class="avp-table avp-prix">
           <thead>
@@ -101,17 +101,20 @@
       </div>
     </div>
 
-    <div class="table-btns">
-      <div>
-        <a href="#" class="btn" @click.prevent="downloadAllPlans">{{ t('plans.allPlans') }}</a>
-      </div>
-      <div>
-        <a :href="baseUrl + 'files/Residence_Des_Muses-brochure.pdf'" target="_blank" rel="noopener" class="btn">{{ t('plans.brochure') }}</a>
-      </div>
+    <div class="table-btns animate" data-animate="animFloatUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) .18s forwards">
       <div>
         <router-link to="/contact" class="btn">{{ t('nav.contact') }}</router-link>
       </div>
     </div>
+
+    <section class="plans-partners animate" data-animate="animFloatUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) .24s forwards">
+      <h2>{{ t('contact.partners') }}</h2>
+      <div class="plans-partners-grid">
+        <div v-for="partner in partnerLogos" :key="partner" class="plans-partners-item">
+          <img :src="partnerImageUrl(partner)" alt="Partner logo" />
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -145,33 +148,30 @@ const apartmentRows = [
     planFileDe: buildPlanFileDe(item.apartment),
   })),
 ]
-const allPlanFiles = computed(() => [...new Set(apartmentRows.flatMap((apartment) => [apartment.planFileFr, apartment.planFileDe]))])
+const partnerLogos = [
+  'Frame 1534994131.png',
+  'Frame 1534994132.png',
+  'Frame 1534994133.png',
+  'Frame 1534994134.png',
+  'Frame 1534994135.png',
+  'Frame 1534994136.png',
+]
 
 function fileUrl(relativePath) {
   return encodeURI(baseUrl + relativePath)
 }
 
-function downloadAllPlans() {
-  if (typeof document === 'undefined') return
-
-  for (const relativePath of allPlanFiles.value) {
-    const link = document.createElement('a')
-    link.href = fileUrl(relativePath)
-    link.setAttribute('download', '')
-    link.style.display = 'none'
-    document.body.appendChild(link)
-    link.click()
-    link.remove()
-  }
+function partnerImageUrl(fileName) {
+  return encodeURI(baseUrl + 'imgs/partners/' + fileName)
 }
 
 const facadeZones = [
-  { id: 'top-left', overlay: 'imgs/plans/top-left.svg', apartmentIndex: 4, kind: 'path', d: 'M174.5 147.5H211.5V129H231V147.5H373V137.5H381V147.5H418.5V271.5H102L174.5 147.5Z' },
-  { id: 'top-right', overlay: 'imgs/plans/top-right.svg', apartmentIndex: 5, kind: 'path', d: 'M418 147.562H447V137.526H455.5V147.562H594.499V130H614.223V147.562H651.141L727 272H418V147.562Z' },
-  { id: 'mid-left', overlay: 'imgs/plans/mid-left.svg', apartmentIndex: 2, kind: 'rect', x: 133, y: 275, width: 285, height: 54 },
-  { id: 'mid-right', overlay: 'imgs/plans/mid-right.svg', apartmentIndex: 3, kind: 'rect', x: 418, y: 275, width: 276, height: 54 },
-  { id: 'bot-left', overlay: 'imgs/plans/bot-left.svg', apartmentIndex: 0, kind: 'rect', x: 133, y: 329, width: 285, height: 62 },
-  { id: 'bot-right', overlay: 'imgs/plans/bot-right.svg', apartmentIndex: 1, kind: 'rect', x: 418, y: 329, width: 276, height: 62 },
+  { id: 'top-left', overlay: 'imgs/plans/top-left.svg', apartmentIndex: 5, kind: 'path', d: 'M174.5 147.5H211.5V129H231V147.5H373V137.5H381V147.5H418.5V271.5H102L174.5 147.5Z' },
+  { id: 'top-right', overlay: 'imgs/plans/top-right.svg', apartmentIndex: 4, kind: 'path', d: 'M418 147.562H447V137.526H455.5V147.562H594.499V130H614.223V147.562H651.141L727 272H418V147.562Z' },
+  { id: 'mid-left', overlay: 'imgs/plans/mid-left.svg', apartmentIndex: 3, kind: 'rect', x: 133, y: 275, width: 285, height: 54 },
+  { id: 'mid-right', overlay: 'imgs/plans/mid-right.svg', apartmentIndex: 2, kind: 'rect', x: 418, y: 275, width: 276, height: 54 },
+  { id: 'bot-left', overlay: 'imgs/plans/bot-left.svg', apartmentIndex: 1, kind: 'rect', x: 133, y: 329, width: 285, height: 62 },
+  { id: 'bot-right', overlay: 'imgs/plans/bot-right.svg', apartmentIndex: 0, kind: 'rect', x: 418, y: 329, width: 276, height: 62 },
 ]
 
 const facadePathZones = computed(() => facadeZones.filter((zone) => zone.kind === 'path'))

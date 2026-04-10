@@ -1,4 +1,22 @@
-/* Localized fonts - Oswald & Playfair Display */
+/* Localized fonts - Oswald, Playfair Display, Freight Big Pro */
+
+/* Freight Big Pro */
+@font-face {
+  font-family: "freight-big-pro";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/FreightBigProMedium-Regular.ttf) format("truetype");
+}
+
+/* Header Oswald */
+@font-face {
+  font-family: "Oswald Header";
+  font-style: normal;
+  font-weight: 350;
+  font-display: swap;
+  src: url(../fonts/Oswald.ttf) format("truetype");
+}
 
 /* Bergamasco Bold */
 @font-face {

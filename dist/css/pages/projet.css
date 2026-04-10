@@ -1,8 +1,13 @@
+.page-projet .tree-columns {
+  gap: 32px;
+}
+
 .page-projet .tree-columns > div:first-child {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: flex-start;
+  padding-right: 28px;
 }
 
 .page-projet .tree-columns > div:first-child img {
@@ -23,11 +28,27 @@
   margin-bottom: 45px;
 }
 
+.page-projet .tree-columns > div:nth-child(2) p {
+  line-height: 31px;
+}
+
+.page-projet .tree-columns > div:nth-child(3) p {
+  line-height: 22.5px;
+}
+
 .page-projet .two-columns .ul li span {
   width: 100px;
 }
 
 @media only screen and (max-width: 450px) {
+  .page-projet .tree-columns {
+    gap: 30px;
+  }
+
+  .page-projet .tree-columns > div:first-child {
+    padding-right: 0;
+  }
+
   .page-projet .padding-bottom {
     margin-bottom: 40px;
   }

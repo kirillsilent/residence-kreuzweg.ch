@@ -2,9 +2,7 @@
   <main id="contact" class="page page-contact">
     <section class="main-section">
       <div class="slider-container">
-        <img class="mySlides" :src="baseUrl + 'imgs/vis/2.webp'" alt="Residence de Muses" />
-        <img class="mySlides" :src="baseUrl + 'imgs/vis/11.webp'" alt="Residence de Muses" />
-        <img class="mySlides" :src="baseUrl + 'imgs/vis/3.webp'" alt="Residence de Muses" />
+        <img v-for="img in heroSlides" :key="img" class="mySlides" :src="img" alt="Residence Kreuzweg" />
       </div>
       <div class="txt">
         <div>
@@ -21,8 +19,8 @@
 
     <section class="contact-container width">
       <div>
-        <h2 class="animate" data-animate="animTitle 0.3s .5s forwards">{{ t('contact.writeUs') }}</h2>
-        <form class="animate" data-animate="animTitle 0.5s 1.1s forwards" @submit.prevent="submitForm">
+        <h2 class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .05s forwards">{{ t('contact.writeUs') }}</h2>
+        <form class="animate" data-animate="animFloatUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) .16s forwards" @submit.prevent="submitForm">
           <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
             <label for="website">Website</label>
             <input id="website" v-model.trim="form.website" type="text" tabindex="-1" autocomplete="off" />
@@ -38,21 +36,21 @@
         </form>
       </div>
       <div>
-        <h2 class="animate" data-animate="animTitle 0.3s .5s forwards">{{ t('contact.person') }}</h2>
-        <div class="client-img animate" data-animate="animTitle 0.3s 1.2s forwards">
-          <img :src="baseUrl + 'imgs/logos/logo-rewus-main.svg'" alt="" />
+        <h2 class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .05s forwards">{{ t('contact.person') }}</h2>
+        <div class="client-img animate" data-animate="animFloatUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) .16s forwards">
+          <img class="client-img" :src="baseUrl + 'imgs/logos/footer.svg'" alt="" />
         </div>
         <div class="client">
           <!-- <h3 class="animate" data-animate="animTitle 0.3s 1.2s forwards">Alen</h3> -->
-          <div class="animate" data-animate="animTitle 0.3s 1.2s forwards">
+          <div class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .22s forwards">
             <img :src="baseUrl + 'imgs/icons/telephone.svg'" alt="" />
-            <a href="tel:+41795760405"><b>+41 79 576 04 05</b></a>
+            <a href="tel:+41795760405">+41 79 576 04 05</a>
           </div>
-          <div class="animate" data-animate="animTitle 0.3s 1.3s forwards">
+          <div class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .30s forwards">
             <img class="bigger" :src="baseUrl + 'imgs/icons/mail.svg'" alt="" />
-            <a href="mailto:info@esm-technologie.ch"><b>info@esm-technologie.ch</b></a>
+            <a href="mailto:info@esm-technologie.ch">info@esm-technologie.ch</a>
           </div>
-          <div class="animate" data-animate="animTitle 0.3s 1.4s forwards">
+          <div class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .38s forwards">
             <img :src="baseUrl + 'imgs/icons/pin.svg'" alt="" />
             <p>ESM TECHNOLOGIE GMBH<br />Britschenmattstrasse 29<br /></p>
           </div>
@@ -75,11 +73,17 @@
 </template>
 
 <script setup>
-import { inject, reactive, ref } from 'vue'
+import { computed, inject, reactive, ref } from 'vue'
 import { useI18n } from '../composables/useI18n'
+import { resolveHeroExtras } from '../composables/useHeroImages'
 
 const baseUrl = inject('baseUrl', '/')
 const { t } = useI18n()
+
+const heroSlides = computed(() => [
+  baseUrl + 'imgs/vis/2.webp',
+  ...resolveHeroExtras('/contact', baseUrl),
+])
 
 // Vor dem Deployment durch die Zieladresse ersetzen.
 const CONTACT_RECIPIENT = 'info@rewus.ch'

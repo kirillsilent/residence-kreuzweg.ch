@@ -6,39 +6,78 @@
 
     <section class="main-section">
       <div class="slider-container">
-        <img class="mySlides" :src="baseUrl + 'imgs/vis/12.webp'" alt="Residence de Muses" />
-        <img class="mySlides" :src="baseUrl + 'imgs/vis/9.webp'" alt="Residence de Muses" />
-        <img class="mySlides" :src="baseUrl + 'imgs/vis/3.webp'" alt="Residence de Muses" />
-      </div>
-      <div class="slider-controlers">
-        <div class="slider-arrows">
-          <span @click="changeImg(-1)" class="nav-btn">&#10094;</span>
-          <span @click="changeImg(1)" class="nav-btn">&#10095;</span>
-        </div>
+        <img v-for="img in heroSlides" :key="img" class="mySlides" :src="img" alt="Residence Kreuzweg" />
       </div>
     </section>
 
     <section class="telechargements width">
-      <div>
-        <span><img :src="baseUrl + 'imgs/icons/brochure.webp'" alt="" /></span>
-        <h3>{{ t('downloads.brochure') }}</h3>
-        <a :href="baseUrl + 'files/Residence_Des_Muses-brochure.pdf'" class="btn" target="_blank" rel="noopener">{{ t('downloads.button') }}</a>
-      </div>
-      <div>
-        <span><img :src="baseUrl + 'imgs/icons/brochure.webp'" alt="" /></span>
-        <h3>{{ t('downloads.plans') }}</h3>
-        <a :href="baseUrl + 'files/Residence_Des_Muses_Plans.pdf'" class="btn" target="_blank" rel="noopener">{{ t('downloads.button') }}</a>
+      <div class="telechargements-gallery">
+        <div class="telechargements-gallery-top">
+          <figure
+            class="telechargements-gallery-item telechargements-gallery-item--large animate"
+            data-animate="animFloatUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) .05s forwards"
+            @click="openProgressGallery(0)"
+          >
+            <img :src="progressImages[0]" alt="Aktueller Baufortschritt Residence Kreuzweg" />
+          </figure>
+
+          <div class="telechargements-gallery-side">
+            <figure
+              v-for="(img, index) in sideImages"
+              :key="img"
+              class="telechargements-gallery-item animate"
+              :data-animate="`animFloatUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) ${(0.11 + index * 0.06).toFixed(2)}s forwards`"
+              @click="openProgressGallery(index + 1)"
+            >
+              <img :src="img" alt="Aktueller Baufortschritt Residence Kreuzweg" />
+            </figure>
+          </div>
+        </div>
+
+        <div class="telechargements-gallery-bottom">
+          <figure
+            v-for="(img, index) in bottomImages"
+            :key="img"
+            class="telechargements-gallery-item animate"
+            :data-animate="`animFloatUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) ${(0.23 + index * 0.06).toFixed(2)}s forwards`"
+            @click="openProgressGallery(index + 3)"
+          >
+            <img :src="img" alt="Aktueller Baufortschritt Residence Kreuzweg" />
+          </figure>
+        </div>
       </div>
     </section>
   </main>
 </template>
 
 <script setup>
-import { inject } from 'vue'
+import { computed, inject } from 'vue'
 import { useI18n } from '../composables/useI18n'
+import { resolveHeroExtras } from '../composables/useHeroImages'
 const baseUrl = inject('baseUrl', '/')
 const { t } = useI18n()
-function changeImg(n) {
-  if (typeof window !== 'undefined' && window.changeImg) window.changeImg(n)
+
+const heroSlides = computed(() => [
+  baseUrl + 'imgs/vis/12.webp',
+  ...resolveHeroExtras('/baufortschritt', baseUrl),
+])
+
+const progressImages = computed(() => [
+  baseUrl + 'imgs/baufortschritt/progress-01.jpg',
+  baseUrl + 'imgs/baufortschritt/progress-02.jpg',
+  baseUrl + 'imgs/baufortschritt/progress-03.jpg',
+  baseUrl + 'imgs/baufortschritt/progress-04.jpg',
+  baseUrl + 'imgs/baufortschritt/progress-05.jpg',
+  baseUrl + 'imgs/baufortschritt/progress-06.jpg',
+  baseUrl + 'imgs/baufortschritt/progress-07.jpg',
+])
+const sideImages = computed(() => progressImages.value.slice(1, 3))
+const bottomImages = computed(() => progressImages.value.slice(3))
+
+function openProgressGallery(index) {
+  if (typeof window === 'undefined') return
+  if (typeof window.openGalleryFullscreen === 'function') {
+    window.openGalleryFullscreen(progressImages.value, index)
+  }
 }
 </script>

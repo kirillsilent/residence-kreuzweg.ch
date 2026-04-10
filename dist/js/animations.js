@@ -63,8 +63,8 @@ let observer;
 function getObserver() {
   if (!observer) {
     observer = new IntersectionObserver(callback, {
-      rootMargin: '0px 0px 800px 0px',
-      threshold: 0,
+      rootMargin: '0px 0px -12% 0px',
+      threshold: 0.12,
     });
   }
   return observer;

@@ -1,7 +1,7 @@
 /* Nav menu - narrower Oswald (like original) */
 .site-header .header-nav-link {
-  font-family: "Oswald", sans-serif;
-  font-weight: 600;
+  font-family: "Oswald Header", "Oswald", sans-serif;
+  font-weight: 200;
   letter-spacing: 0.05em;
 }
 

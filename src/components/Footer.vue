@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__content">
-        <div class="footer__logo">Residence des Muses</div>
+        <div class="footer__logo">Residence Kreuzweg</div>
         <div class="footer__info">
           <p class="footer__company">LRM Services Sàrl</p>
           <p class="footer__address">Route de La Neuveville 37</p>

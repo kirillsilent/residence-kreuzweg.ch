@@ -2003,11 +2003,14 @@ footer .avp-details a:hover {
     line-height: 32px;
   }
   h1 {
-    font-size: 38px;
+    font-size: 49px !important;
     line-height: 38px;
   }
   header {
     padding: 0 30px;
+  }
+  .page-title {
+    font-size: 86px;
   }
   #menu-btn {
     right: 30px;

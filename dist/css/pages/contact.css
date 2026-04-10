@@ -1,7 +1,8 @@
 .page-contact .contact-container {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: flex-start;
+  padding-bottom: 110px;
 }
 
 .page-contact .contact-container > div {
@@ -9,7 +10,7 @@
 }
 
 .page-contact .contact-container > div h2 {
-  margin: 15px 0;
+  margin: 0 0 36px;
 }
 
 .page-contact .contact-container > div h2:after {
@@ -34,6 +35,7 @@
 .page-contact .contact-container > div:first-child {
   padding-top: 150px;
   width: 54%;
+  padding-bottom: 40px;
 }
 
 .page-contact .contact-container > div:first-child form {
@@ -41,14 +43,16 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  margin-top: 100px;
+  width: 100%;
+  max-width: 520px;
+  margin-top: 0;
 }
 
 .page-contact .contact-container > div:first-child form > div {
   width: 100%;
-  margin-bottom: 2.5em;
+  margin-bottom: 30px;
   border-bottom: 1px solid #303030;
-  padding: 5px 0;
+  padding: 0 0 8px;
 }
 
 .page-contact .contact-container > div:first-child form > div input,
@@ -63,10 +67,16 @@
   font-weight: 450;
 }
 
+.page-contact .contact-container > div:first-child form > div textarea {
+  min-height: 42px;
+  resize: vertical;
+}
+
 .page-contact .contact-container > div:first-child form .btn {
-  margin: 30px auto;
+  margin: 10px 0 0;
   width: auto;
   font-size: 16px;
+  align-self: flex-start;
 }
 
 .page-contact .contact-container > div:last-child {
@@ -74,6 +84,7 @@
   padding: 150px 50px 80px 50px;
   display: flex;
   flex-direction: column;
+  min-height: 607px;
 }
 
 .page-contact .contact-container > div:last-child h2 {
@@ -96,7 +107,7 @@
 .page-contact .contact-container > div:last-child .client h3 {
   text-align: center;
   color: #9d8255;
-  font-family: oswald, sans-serif;
+  font-family: "freight-big-pro", "Playfair Display", serif;
   margin-bottom: 1em;
 }
 
@@ -135,9 +146,12 @@
   height: 55px;
   margin: 0 auto 83px auto;
 }
-
+.client-img {
+    display: flex;
+    justify-content: center; 
+}
 .page-contact .contact-container > div .client-img img {
-  width: 100%;
+  width: 250px;
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
@@ -206,6 +220,7 @@
   .page-contact .contact-container {
     padding: 0 0px 0px 100px;
     margin-bottom: initial;
+    padding-bottom: 100px;
   }
 
   .page-contact .contact-container > div span {
@@ -217,8 +232,12 @@
     padding-right: 20px;
   }
 
+  .page-contact .contact-container > div:first-child form {
+    margin-top: 0;
+  }
+
   .page-contact .contact-container > div:first-child form .btn {
-    margin-top: 30px;
+    margin-top: 18px;
   }
 
   .page-contact .contact-container > div:last-child {
@@ -231,6 +250,7 @@
     flex-direction: column;
     padding: 0;
     gap: 30px;
+    padding-bottom: 60px;
   }
 
   .page-contact .contact-container > div {
@@ -264,6 +284,7 @@
 
   .page-contact .contact-container > div:first-child form {
     margin-top: 40px;
+    max-width: none;
   }
 
   .page-contact .contact-container > div:first-child form > div {
