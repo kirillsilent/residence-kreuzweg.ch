@@ -20,14 +20,19 @@
     <section class="tree-columns width">
       <div class="animate" data-animate="animContent .3s .05s forwards">
         <img class="small-logo animate" data-animate="animContent .3s .05s forwards" :src="baseUrl + 'imgs/logos/logo-rewus-main.svg'" alt="" />
-        <span>{{ t('project.lead') }}</span>
       </div>
       <div class="animate" data-animate="animContent .3s .02s forwards">
-        <p>{{ t('project.p1') }}<br /><br />{{ t('project.p2') }}</p>
+        <p>{{ t('project.p1') }}<br /><br />{{ t('project.p2') }}<br /><br />{{ t('project.p3') }}</p>
       </div>
       <div class="animate" data-animate="animContent .5s .05s forwards">
-        <p>{{ t('project.p3') }}<br /><br />{{ t('project.p4') }}</p>
+        <p>
+          {{ t('project.p4') }}
+          <template v-if="projectP5"><br /><br />{{ projectP5 }}</template>
+        </p>
       </div>
+    </section>
+    <section class="project-lead-row width">
+      <p class="project-lead-row-text animate" data-animate="animContent .35s .08s forwards">{{ t('project.lead') }}</p>
     </section>
 
     <section class="fullImg" :style="{ backgroundImage: 'url(' + baseUrl + 'imgs/vis/4.webp)' }">
@@ -50,6 +55,8 @@ const heroSlides = computed(() => [
   baseUrl + 'imgs/vis/1-night.webp',
   ...resolveHeroExtras('/projet', baseUrl),
 ])
+
+const projectP5 = computed(() => t('project.p5'))
 
 function changeImg(n) {
   if (typeof window !== 'undefined' && window.changeImg) window.changeImg(n)

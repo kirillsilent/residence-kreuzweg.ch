@@ -24,7 +24,7 @@
         <p class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .24s forwards">{{ t('apartments.intro2') }}</p>
       </div>
       <div class="img animate" data-animate="animFloatUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) .18s forwards">
-        <img :src="baseUrl + 'imgs/vis/13.webp'" alt="Residence Kreuzweg" />
+        <img :src="baseUrl + 'imgs/apartments/apartments-die-wohnungen.jpg'" alt="Residence Kreuzweg" />
       </div>
     </section>
 
@@ -35,13 +35,13 @@
       <div class="txt">
         <h2 class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .05s forwards">{{ t('apartments.buildTitle') }}</h2>
         <p class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .14s forwards">{{ t('apartments.buildIntro') }}</p>
-        <p class="animate apartments-lead" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .22s forwards">{{ t('apartments.buildLead') }}</p>
-        <ul class="apartments-feature-list animate" data-animate="animFloatUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) .30s forwards">
+        <p v-if="t('apartments.buildLead')" class="animate apartments-lead" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .22s forwards">{{ t('apartments.buildLead') }}</p>
+        <ul v-if="t('apartments.buildFeatures').length" class="apartments-feature-list animate" data-animate="animFloatUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) .30s forwards">
           <li v-for="(item, index) in t('apartments.buildFeatures')" :key="index">{{ item }}</li>
         </ul>
-        <p class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .38s forwards">{{ t('apartments.buildOutro1') }}</p>
-        <p class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .46s forwards">{{ t('apartments.buildOutro2') }}</p>
-        <p class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .54s forwards">{{ t('apartments.buildOutro3') }}</p>
+        <p v-if="t('apartments.buildOutro1')" class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .38s forwards">{{ t('apartments.buildOutro1') }}</p>
+        <p v-if="t('apartments.buildOutro2')" class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .46s forwards">{{ t('apartments.buildOutro2') }}</p>
+        <p v-if="t('apartments.buildOutro3')" class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .54s forwards">{{ t('apartments.buildOutro3') }}</p>
       </div>
     </section>
 
@@ -68,15 +68,14 @@
 <script setup>
 import { computed, inject } from 'vue'
 import { useI18n } from '../composables/useI18n'
-import { resolveHeroExtras } from '../composables/useHeroImages'
 
 const baseUrl = inject('baseUrl', '/')
 const { t } = useI18n()
 
 const heroSlides = computed(() => [
-  // The previous first slide referenced a missing file (`imgs/vis/3.webp`).
-  baseUrl + 'imgs/vis/10.webp',
-  ...resolveHeroExtras('/appartements', baseUrl),
+  baseUrl + 'imgs/apartments/apartments-hero-1.jpg',
+  baseUrl + 'imgs/apartments/apartments-hero-2.jpg',
+  baseUrl + 'imgs/apartments/apartments-hero-3.jpg',
 ])
 
 function changeImg(n) {

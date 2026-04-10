@@ -6,7 +6,13 @@
 
     <section class="main-section">
       <div class="slider-container">
-        <img v-for="img in heroSlides" :key="img" class="mySlides" :src="img" alt="Residence Kreuzweg" />
+        <img
+          v-for="(img, index) in heroSlides"
+          :key="img"
+          :class="['mySlides', { 'hero-primary-slide': index === 0 }]"
+          :src="img"
+          alt="Residence Kreuzweg"
+        />
       </div>
     </section>
 

@@ -1,11 +1,12 @@
 .page-projet .tree-columns {
   gap: 32px;
+  padding-bottom: 34px;
 }
 
 .page-projet .tree-columns > div:first-child {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: flex-start;
   padding-right: 28px;
 }
@@ -29,24 +30,60 @@
 }
 
 .page-projet .tree-columns > div:nth-child(2) p {
-  line-height: 31px;
+  line-height: 22.5px;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .page-projet .tree-columns > div:nth-child(3) p {
-  line-height: 22.5px;
+  line-height: 29.5px;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .page-projet .two-columns .ul li span {
   width: 100px;
 }
 
+.page-projet .project-lead-row {
+  padding-bottom: 126px;
+}
+
+.page-projet .project-lead-row-text {
+  margin: 0;
+  margin-left: calc((100% - 64px) / 3 + -141px);
+  color: #a79a8b;
+  font-family: freight-big-pro, serif;
+  font-size: 41px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 120%;
+  text-align: left;
+}
+
 @media only screen and (max-width: 450px) {
   .page-projet .tree-columns {
     gap: 30px;
+    padding-bottom: 20px;
   }
 
   .page-projet .tree-columns > div:first-child {
     padding-right: 0;
+  }
+
+  .page-projet .project-lead-row {
+    padding-bottom: 50px;
+  }
+
+  .page-projet .project-lead-row-text {
+    font-size: 23px;
+    letter-spacing: 0.04em;
+    margin-left: 0;
   }
 
   .page-projet .padding-bottom {

@@ -53,12 +53,26 @@ const callback = (entries) => {
     if (!entry.isIntersecting) return;
     if (entry.target.dataset.animateDone === '1') return;
     entry.target.dataset.animateDone = '1';
-    entry.target.style.animation = entry.target.dataset.animate;
+    entry.target.style.animation = slowAnimationDuration(entry.target.dataset.animate);
     if (observer) observer.unobserve(entry.target);
   });
 };
 
 let observer;
+const SCROLL_ANIMATION_SLOW_FACTOR = 1.85;
+
+function slowAnimationDuration(animationValue) {
+  if (!animationValue || typeof animationValue !== 'string') return animationValue;
+  let replaced = false;
+  return animationValue.replace(/(\d*\.?\d+)s/g, (match, rawValue) => {
+    if (replaced) return match;
+    const parsed = Number(rawValue);
+    if (!Number.isFinite(parsed)) return match;
+    replaced = true;
+    const slowed = Math.max(0, parsed * SCROLL_ANIMATION_SLOW_FACTOR);
+    return `${Number(slowed.toFixed(3))}s`;
+  });
+}
 
 function getObserver() {
   if (!observer) {

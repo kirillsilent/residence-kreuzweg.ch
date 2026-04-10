@@ -44,7 +44,7 @@
           <!-- <h3 class="animate" data-animate="animTitle 0.3s 1.2s forwards">Alen</h3> -->
           <div class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .22s forwards">
             <img :src="baseUrl + 'imgs/icons/telephone.svg'" alt="" />
-            <a href="tel:+41795760405">+41 79 576 04 05</a>
+            <a href="tel:+41799532730">+41 79 953 27 30</a>
           </div>
           <div class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .30s forwards">
             <img class="bigger" :src="baseUrl + 'imgs/icons/mail.svg'" alt="" />
@@ -75,14 +75,14 @@
 <script setup>
 import { computed, inject, reactive, ref } from 'vue'
 import { useI18n } from '../composables/useI18n'
-import { resolveHeroExtras } from '../composables/useHeroImages'
 
 const baseUrl = inject('baseUrl', '/')
-const { t } = useI18n()
+const { t, language } = useI18n()
 
 const heroSlides = computed(() => [
-  baseUrl + 'imgs/vis/2.webp',
-  ...resolveHeroExtras('/contact', baseUrl),
+  baseUrl + 'imgs/contact/contact-hero-1.jpg',
+  baseUrl + 'imgs/contact/contact-hero-2.jpg',
+  baseUrl + 'imgs/contact/contact-hero-3.jpg',
 ])
 
 // Vor dem Deployment durch die Zieladresse ersetzen.
@@ -108,6 +108,37 @@ const URL_REGEX = /(https?:\/\/|www\.)/gi
 
 function changeImg(n) {
   if (typeof window !== 'undefined' && window.changeImg) window.changeImg(n)
+}
+
+function formatSubmittedAt(date) {
+  return new Intl.DateTimeFormat('de-CH', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+    timeZoneName: 'short'
+  }).format(date)
+}
+
+function buildEmailBody({ senderName, submittedAt }) {
+  const lines = [
+    'RESIDENCE KREUZWEG',
+    'Kontaktanfrage',
+    '========================================',
+    `Name: ${senderName || '-'}`,
+    `E-Mail: ${form.email || '-'}`,
+    `Telefon: ${form.phone || '-'}`,
+    '----------------------------------------',
+    'Nachricht:',
+    form.message || '-',
+    '----------------------------------------',
+    `Sprache: ${language.value?.toUpperCase?.() || 'DE'}`,
+    `Eingang: ${formatSubmittedAt(submittedAt)}`,
+  ]
+  return lines.join('\n')
 }
 
 async function submitForm() {
@@ -145,6 +176,8 @@ async function submitForm() {
 
   try {
     const senderName = `${form.firstName} ${form.lastName}`.trim()
+    const submittedAt = new Date()
+    const styledBody = buildEmailBody({ senderName, submittedAt })
 
     const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_RECIPIENT}`, {
       method: 'POST',
@@ -154,15 +187,20 @@ async function submitForm() {
       },
       body: JSON.stringify({
         _subject: `[Website] ${t('contact.subject')}`,
-        _template: 'basic',
+        _template: 'table',
         _captcha: 'true',
         _replyto: form.email,
         _honey: form.website,
+        project: 'Residence Kreuzweg',
+        contact_type: t('contact.subject'),
         name: senderName,
         email: form.email,
         phone: form.phone || '-',
         message: form.message,
-        submitted_at: new Date().toISOString()
+        email_body: styledBody,
+        submitted_at_iso: submittedAt.toISOString(),
+        submitted_at_local: formatSubmittedAt(submittedAt),
+        site: 'https://residence-des-muses.ch'
       })
     })
 

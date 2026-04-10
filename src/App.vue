@@ -3,12 +3,8 @@
     <header class="site-header">
       <div class="header-contact">
         <div>
-          <div><a href="tel:+41795760405"><img :src="baseUrl + 'imgs/icons/telephone.webp'" alt="" /></a></div>
+          <div><a href="tel:+41799532730"><img :src="baseUrl + 'imgs/icons/telephone.webp'" alt="" /></a></div>
           <div><a href="mailto:info@esm-technologie.ch"><img :src="baseUrl + 'imgs/icons/email.webp'" alt="" /></a></div>
-          <div class="lang-switcher" role="group" :aria-label="t('nav.languageSwitcher')">
-            <button type="button" :class="['lang-btn', { active: language === 'de' }]" @click="setLanguage('de')">DE</button>
-            <button type="button" :class="['lang-btn', { active: language === 'fr' }]" @click="setLanguage('fr')">FR</button>
-          </div>
         </div>
       </div>
       <div class="width header-inner">
@@ -24,6 +20,11 @@
             <li><router-link to="/plans" class="header-nav-link">{{ t('nav.plans') }}</router-link></li>
             <li><router-link to="/baufortschritt" class="header-nav-link">{{ t('nav.downloads') }}</router-link></li>
             <li><router-link to="/contact" class="header-nav-link">{{ t('nav.contact') }}</router-link></li>
+            <li class="header-nav-lang" role="group" :aria-label="t('nav.languageSwitcher')">
+              <button type="button" :class="['header-nav-link', 'header-nav-lang-btn', { active: language === 'de' }]" @click="setLanguage('de')">DE</button>
+              <span class="header-nav-lang-sep" aria-hidden="true">|</span>
+              <button type="button" :class="['header-nav-link', 'header-nav-lang-btn', { active: language === 'fr' }]" @click="setLanguage('fr')">FR</button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -60,9 +61,9 @@
     <footer class="site-footer">
       <div class="width footer-inner">
         <div class="footer-details">
-          <div><p>ESM TECHNOLOGIE GMBH<br />Britschenmattstrasse 29<br />3238 Gals</p></div>
+          <div><p>ESM TECHNOLOGIE GmbH<br />Britschenmattstrasse 29<br />3238 Gals</p></div>
           <div><router-link to="/projet"><img :src="baseUrl + 'imgs/logos/footer.svg'" alt="Rewus GmbH logo" /></router-link></div>
-          <div><p><a href="mailto:info@esm-technologie.ch">info@esm-technologie.ch</a><br /><a href="tel:+41795760405">+41 79 576 04 05</a></p></div>
+          <div><p><a href="mailto:info@esm-technologie.ch">info@esm-technologie.ch</a><br /><a href="tel:+41799532730">+41 79 953 27 30</a></p></div>
         </div>
       </div>
     </footer>
@@ -208,7 +209,7 @@ const jsonLd = computed(() =>
     url: SITE_URL,
     image: DEFAULT_OG_IMAGE,
     logo: `${SITE_URL}/imgs/logos/logo-rewus-main.svg`,
-    telephone: '+41 79 576 04 05',
+    telephone: '+41 79 953 27 30',
     email: 'info@rewus.ch',
     address: {
       '@type': 'PostalAddress',
@@ -387,7 +388,7 @@ function initHeaderInteractions() {
   const onMenuClick = (event) => {
     const target = event.target
     if (!(target instanceof Element)) return
-    if (!target.closest('a')) return
+    if (!target.closest('a, button')) return
     menu.classList.remove('active')
     menuBtn.classList.remove('active')
     onScroll()
@@ -450,26 +451,4 @@ onUnmounted(() => {
 })
 </script>
 
-<style scoped>
-.lang-switcher {
-  align-items: center;
-  display: flex;
-  gap: 6px;
-}
-
-.lang-btn {
-  background: transparent;
-  border: 1px solid black;
-  color: black;
-  cursor: pointer;
-  font-size: 11px;
-  line-height: 1;
-  min-width: 30px;
-  padding: 4px 6px;
-}
-
-.lang-btn.active {
-  background-color: #a59078a5;
-  color: #000;
-}
-</style>
+<style scoped></style>

@@ -201,8 +201,8 @@ img {
 }
 
 .site-header .header-contact > div > div:last-child img {
-  height: 38px;
-  filter: invert(1);
+  height: 25px;
+  filter: none;
 }
 
 .site-header .header-inner {
@@ -271,6 +271,36 @@ img {
 }
 
 .site-header .header-nav-link:hover::after {
+  opacity: 1;
+}
+
+.site-header .header-nav-lang {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-header .header-nav-lang-btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.site-header .header-nav-lang-sep {
+  color: #1c2125;
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+.site-header .header-nav-lang-btn.active {
+  font-weight: 400;
+}
+
+.site-header .header-nav-lang-btn.active::after {
   opacity: 1;
 }
 
@@ -469,7 +499,7 @@ img {
   font-family: freight-big-pro, serif;
   color: #a79a8b;
   letter-spacing: 0.08em;
-  padding: 62px 0;
+  padding: 5px 0;
 }
 
 .tree-columns > div .icon-txt {
@@ -908,6 +938,11 @@ img {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.site-footer .footer-details > div:first-child {
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .site-footer .footer-details > div img {
@@ -1446,7 +1481,7 @@ img {
   }
 
   h1 {
-    font-size: 42px !important;
+    font-size: 39px !important;
     line-height: 38px;
   }
 

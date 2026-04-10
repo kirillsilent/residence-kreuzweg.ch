@@ -74,7 +74,6 @@
               <th class="column-7">{{ t('plans.terraceBalcony') }}</th>
               <th class="column-8">m2</th>
               <th class="column-19">{{ t('plans.downloadPlan') }}</th>
-              <th class="column-20">{{ t('plans.downloadPlan') }}</th>
               <th class="column-21">{{ t('plans.status') }}</th>
             </tr>
           </thead>
@@ -85,11 +84,12 @@
               <td class="column-6">{{ apartment.surface }} m<sup>2</sup></td>
               <td class="column-7">{{ apartment.terrasse }}</td>
               <td class="column-8">{{ apartment.jardin }}</td>
-              <td class="column-19">
-                <a :href="fileUrl(apartment.planFileFr)" download class="plan-lang-link">FR</a>
-              </td>
-              <td class="column-20">
-                <a :href="fileUrl(apartment.planFileDe)" download class="plan-lang-link">DE</a>
+              <td class="column-19 plan-lang-cell">
+                <span class="plan-lang-inline">
+                  <a :href="fileUrl(apartment.planFileDe)" download class="plan-lang-link">DE</a>
+                  <span class="plan-lang-separator" aria-hidden="true">|</span>
+                  <a :href="fileUrl(apartment.planFileFr)" download class="plan-lang-link">FR</a>
+                </span>
               </td>
               <td class="column-21"><i></i><span>{{ t(`plans.statusValues.${apartment.status}`) }}</span></td>
             </tr>

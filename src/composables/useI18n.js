@@ -21,10 +21,11 @@ const messages = {
       heroTitle: 'EXKLUSIVE RESIDENZ',
       heroSubtitle: 'HERZOGENBUCHSEE',
       lead: 'Eco Premium Residence Kreuzweg',
-      p1: 'Architektur, Raum und Lebensqualitaet auf hoechstem Niveau.',
-      p2: 'Eine exklusive Residenz mit nur zwei grosszuegigen Wohneinheiten, konzipiert fuer hoechste Ansprueche an Privatsphaere, Raum und Lebensqualitaet. Die klare, zeitlose Architektur kombiniert hochwertige Materialien wie Holz und Beton mit grosszuegigen Fensterflaechen und schafft ein lichtdurchflutetes, elegantes Wohnambiente.',
-      p3: 'Besonders hervorzuheben ist die nachhaltige Bauweise: Das Gebaeude wurde unter Einsatz der innovativen EmisCo-Technologie realisiert, einem eigenen Baustoffsystem auf Basis von Miscanthus und Bio-Beton. Diese zukunftsorientierte Konstruktion ermoeglicht eine deutliche Reduktion des CO2-Fussabdrucks, verbindet oekologische Verantwortung mit hoher baulicher Qualitaet und sorgt gleichzeitig fuer ein angenehmes, gesundes Raumklima. Jede Einheit wurde so gestaltet, dass sie maximale Freiheit in der Nutzung und ein aussergewoehnliches Raumgefuehl bietet.',
-      p4: 'Die Attikawohnung erstreckt sich ueber zwei Ebenen und vermittelt ein exklusives Penthouse-Gefuehl, waehrend die Gartenwohnung mit zusaetzlichem Untergeschoss vielseitige Moeglichkeiten fuer individuelle Wohnkonzepte eroeffnet. Ein seltenes Wohnangebot fuer anspruchsvolle Eigennutzer und Investoren, die Wert auf Qualitaet, Ruhe, Nachhaltigkeit und langfristige Wertbestaendigkeit legen.',
+      p1: 'Architektur, Raum und Lebensqualität auf höchstem Niveau.',
+      p2: 'Eine exklusive Residenz mit insgesamt sechs Wohneinheiten, konzipiert für hohe Ansprüche an Komfort, Qualität und Wohnkultur. Die zeitlose Architektur kombiniert hochwertige Materialien mit grosszügigen Fensterflächen und schafft ein lichtdurchflutetes, elegantes Wohnambiente.',
+      p3: 'Die Bauweise setzt neue Massstäbe: Realisiert mit der innovativen EmisCo-Technologie auf Basis von Miscanthus und Bio-Beton, verbindet das Gebäude ökologische Nachhaltigkeit mit hoher baulicher Qualität und schafft ein gesundes, spürbar angenehmes Raumklima bei reduziertem CO₂-Fussabdruck.',
+      p4: 'Die Attikawohnungen mit Mezzanin bieten ein exklusives Raumgefühl mit zusätzlicher architektonischer Ebene, während die Gartenwohnungen mit zusätzlichem Untergeschoss vielseitige Nutzungsmöglichkeiten eröffnen.',
+      p5: 'Ein aussergewöhnliches Wohnangebot für anspruchsvolle Eigennutzer und Investoren mit Fokus auf Qualität, Ruhe und langfristige Wertbeständigkeit.',
       cta: 'Preise und Grundrisse'
     },
     situation: {
@@ -48,24 +49,19 @@ const messages = {
     apartments: {
       title: 'WOHNUNGEN',
       heading: 'Die Wohnungen',
-      intro1: 'Die Wohnungen ueberzeugen durch grosszuegige Raumverhaeltnisse, klare architektonische Linien und eine Konzeption, die konsequent auf hoechsten Wohnkomfort ausgerichtet ist. Die lichtdurchfluteten Wohn- und Essbereiche mit offener Kueche oeffnen sich ueber grossflaechige Verglasungen direkt zu den Aussenraeumen und schaffen eine fliessende Verbindung zwischen Innen- und Aussenbereich.',
-      intro2: 'Die durchdachten Grundrisse ermoeglichen maximale Flexibilitaet in der Nutzung und vermitteln ein aussergewoehnliches Raumgefuehl. Waehrend die Wohnbereiche Offenheit und Weite ausstrahlen, bieten die Schlafbereiche gezielte Rueckzugsorte mit einem hohen Mass an Privatsphaere. Hochwertige Baeder runden das Gesamtbild ab und erfuellen die Ansprueche an modernes, komfortables Wohnen.',
+      intro1: 'Die Wohnungen überzeugen durch grosszügige Raumverhältnisse, klare architektonische Linien und eine konsequent auf hohen Wohnkomfort ausgerichtete Konzeption. Die lichtdurchfluteten Wohn- und Essbereiche mit offener Küche öffnen sich über grossflächige Verglasungen zu den Aussenräumen und schaffen eine fliessende Verbindung zwischen Innen und Aussen.',
+      intro2: 'Durchdachte Grundrisse ermöglichen Flexibilität in der Nutzung und ein aussergewöhnliches Raumgefühl. Während die Wohnbereiche Offenheit vermitteln, bieten die Schlafbereiche ruhige Rückzugsorte mit hoher Privatsphäre. Hochwertige Badezimmer runden das Gesamtbild ab.',
       buildTitle: 'Ein entscheidender Unterschied: die Bauweise',
-      buildIntro: 'Im Gegensatz zu konventionellen Neubauten basiert dieses Projekt auf der innovativen EmisCo-Technologie, einem eigenen Baustoffsystem aus Miscanthus und Bio-Beton.',
-      buildLead: 'Diese Bauweise definiert den Wohnkomfort neu.',
-      buildFeatures: [
-        'Natuerliche Regulierung von Luft und Feuchtigkeit',
-        'Ganzjaehrig stabiles und angenehmes Raumklima',
-        'Effiziente Bindung und Reduktion von CO2',
-        'Deutlich verbesserte Luftqualitaet im Innenraum'
-      ],
-      buildOutro1: 'Im Ergebnis entsteht ein Innenklima, das sich klar von herkoemmlichen Bauweisen abhebt: konstant, ausgeglichen und spuerbar hochwertig.',
-      buildOutro2: 'Die physikalischen Eigenschaften der Materialien wirken vergleichbar mit einer hochwertigen Klimaanlage, jedoch vollstaendig natuerlich, energieeffizient und ohne kuenstliche Steuerung.',
-      buildOutro3: 'Das Resultat ist ein Wohngefuehl, das man unmittelbar wahrnimmt: frische, reine Luft, aehnlich der Qualitaet eines natuerlichen Umfelds.',
-      technologyTitle: 'Technologie trifft Komfort',
-      technologyText: 'Ergaenzt wird dieses Konzept durch ein modernes Lueftungssystem von Zehnder, das kontinuierlich Frischluft zufuehrt und den Luftaustausch optimal gewaehrleistet. Die Kombination aus intelligenter Bauweise und moderner Technik schafft ein Wohnklima auf einem Niveau, das in dieser Form im klassischen Wohnbau selten erreicht wird.',
+      buildIntro: 'Das Projekt basiert auf der innovativen EmisCo-Technologie – einem Baustoffsystem aus Miscanthus und Bio-Beton, das den Wohnkomfort neu definiert.',
+      buildLead: 'Die Gebäudehülle reguliert Luft und Feuchtigkeit auf natürliche Weise und sorgt ganzjährig für ein stabiles, angenehmes Raumklima. Gleichzeitig werden CO₂ reduziert und die Luftqualität im Innenraum spürbar verbessert.',
+      buildFeatures: [],
+      buildOutro1: 'Das Ergebnis ist ein ausgeglichenes, hochwertiges Wohnklima – vergleichbar mit einer natürlichen Klimaregulierung und unmittelbar wahrnehmbar durch frische, reine Luft.',
+      buildOutro2: '',
+      buildOutro3: '',
+      technologyTitle: 'Technologie & Individualität',
+      technologyText: 'Ein modernes Lüftungssystem von Zehnder sorgt zusätzlich für kontinuierliche Frischluftzufuhr und optimalen Luftaustausch.',
       customizationTitle: 'Individuelle Gestaltung',
-      customizationText: 'Die Innenausstattung bleibt bewusst offen und bietet der Kaeuferschaft maximale Freiheit in der Gestaltung. So entsteht ein Zuhause, das nicht nur architektonisch ueberzeugt, sondern auch exakt den persoenlichen Vorstellungen entspricht.'
+      customizationText: 'Die Innenausstattung bleibt bewusst offen und ermöglicht der Käuferschaft eine individuelle Gestaltung – für ein Zuhause, das sowohl architektonisch als auch persönlich überzeugt.'
     },
     gallery: {
       title: 'Galerie'
@@ -145,9 +141,10 @@ const messages = {
       heroSubtitle: 'HERZOGENBUCHSEE',
       lead: 'Eco Premium Residence Kreuzweg',
       p1: 'Architecture, espace et qualite de vie au plus haut niveau.',
-      p2: 'Une residence exclusive composee de seulement deux logements genereux, concue pour repondre aux plus hautes exigences en matiere d intimite, d espace et de qualite de vie. L architecture claire et intemporelle associe des materiaux nobles comme le bois et le beton a de vastes surfaces vitrees afin de creer une atmosphere lumineuse et elegante.',
-      p3: 'La construction durable constitue un atout majeur du projet : le batiment a ete realise avec la technologie innovante EmisCo, un systeme constructif proprietaire base sur le miscanthus et le bio-beton. Cette approche tournee vers l avenir permet de reduire sensiblement l empreinte carbone, d allier responsabilite ecologique et haute qualite constructive, tout en garantissant un climat interieur sain et agreable. Chaque unite a ete pensee pour offrir une grande liberte d usage et une sensation d espace exceptionnelle.',
-      p4: 'L appartement en attique se deploie sur deux niveaux et procure une veritable sensation de penthouse, tandis que l appartement avec jardin et sous-sol supplementaire ouvre de nombreuses possibilites pour des concepts de vie personnalises. Une offre residentielle rare pour des proprietaires occupants et des investisseurs exigeants, attaches a la qualite, au calme, a la durabilite et a une valorisation patrimoniale sur le long terme.',
+      p2: 'Une residence exclusive composee de six logements au total, concue pour repondre a des exigences elevees en matiere de confort, de qualite et d art de vivre. L architecture intemporelle associe des materiaux haut de gamme a de vastes surfaces vitrees afin de creer une atmosphere lumineuse et elegante.',
+      p3: 'La construction etablit de nouveaux standards : realise avec la technologie innovante EmisCo, basee sur le miscanthus et le bio-beton, le batiment associe durabilite ecologique et haute qualite constructive, tout en offrant un climat interieur sain, sensiblement plus agreable, avec une empreinte CO₂ reduite.',
+      p4: 'Les appartements en attique avec mezzanine offrent une sensation d espace exclusive grace a un niveau architectural supplementaire, tandis que les appartements de jardin avec sous-sol additionnel ouvrent des possibilites d usage polyvalentes.',
+      p5: 'Une offre residentielle exceptionnelle pour des proprietaires occupants et investisseurs exigeants, avec un accent sur la qualite, le calme et la valorisation a long terme.',
       cta: 'Plans et prix'
     },
     situation: {
@@ -171,24 +168,19 @@ const messages = {
     apartments: {
       title: 'APPARTEMENTS',
       heading: 'Les appartements',
-      intro1: 'Les appartements seduisent par leurs volumes genereux, leurs lignes architecturales epurees et une conception resolument orientee vers un confort d habitation de tres haut niveau. Les espaces de vie et de repas, baignés de lumiere et prolonges par une cuisine ouverte, s ouvrent largement sur les exterieurs grace a de vastes surfaces vitrees et instaurent une transition fluide entre interieur et exterieur.',
-      intro2: 'Les plans soigneusement etudies offrent une grande flexibilite d usage et une sensation d espace remarquable. Alors que les espaces de vie expriment ouverture et amplitude, les zones nuit proposent de veritables retraits avec un haut niveau d intimite. Des salles de bain haut de gamme viennent completer l ensemble et repondent pleinement aux attentes d un habitat moderne et confortable.',
+      intro1: 'Les appartements se distinguent par des volumes genereux, des lignes architecturales claires et une conception resolument orientee vers un confort de vie eleve. Les espaces de vie et de repas, lumineux et ouverts avec cuisine integree, se prolongent vers les exterieurs grace a de larges surfaces vitrees et creent une transition fluide entre interieur et exterieur.',
+      intro2: 'Des plans bien penses permettent une utilisation flexible et procurent une sensation d espace exceptionnelle. Tandis que les espaces de vie expriment l ouverture, les zones nuit offrent des retraits calmes avec un haut niveau d intimite. Des salles de bain haut de gamme viennent parfaire l ensemble.',
       buildTitle: 'Une difference decisive : la construction',
-      buildIntro: 'Contrairement aux constructions neuves conventionnelles, ce projet repose sur la technologie innovante EmisCo, un systeme constructif proprietaire compose de miscanthus et de bio-beton.',
-      buildLead: 'Cette methode de construction redefinit le confort de vie.',
-      buildFeatures: [
-        'Regulation naturelle de l air et de l humidite',
-        'Climat interieur stable et agreable toute l annee',
-        'Fixation et reduction efficaces du CO2',
-        'Qualite de l air interieur nettement amelioree'
-      ],
-      buildOutro1: 'Le resultat est un climat interieur qui se distingue clairement des constructions traditionnelles : constant, equilibre et perceptiblement plus qualitatif.',
-      buildOutro2: 'Les proprietes physiques des materiaux agissent de maniere comparable a une climatisation haut de gamme, mais de facon entierement naturelle, energiquement efficace et sans pilotage artificiel.',
-      buildOutro3: 'Il en resulte une sensation d habitat que l on percoit immediatement : un air frais et pur, proche de la qualite offerte par un environnement naturel.',
-      technologyTitle: 'La technologie au service du confort',
-      technologyText: 'Ce concept est complete par un systeme de ventilation moderne signe Zehnder, qui apporte en continu de l air frais et assure un renouvellement optimal de l air. L association d une construction intelligente et d une technique contemporaine cree un climat interieur d un niveau rarement atteint dans l habitat classique.',
-      customizationTitle: 'Amenagement sur mesure',
-      customizationText: 'Les finitions interieures sont volontairement laissees ouvertes et offrent a l acquereur une liberte maximale dans l amenagement. Il en resulte un lieu de vie convaincant sur le plan architectural et parfaitement adapte aux attentes personnelles.'
+      buildIntro: 'Le projet repose sur la technologie innovante EmisCo – un systeme constructif base sur le miscanthus et le bio-beton, qui redefine le confort de vie.',
+      buildLead: 'L enveloppe du batiment regule naturellement l air et l humidite et assure toute l annee un climat interieur stable et agreable. En parallele, les emissions de CO₂ sont reduites et la qualite de l air interieur est sensiblement amelioree.',
+      buildFeatures: [],
+      buildOutro1: 'Le resultat est un climat de vie equilibre et haut de gamme, comparable a une regulation climatique naturelle et perceptible immediatement grace a un air frais et pur.',
+      buildOutro2: '',
+      buildOutro3: '',
+      technologyTitle: 'Technologie & individualite',
+      technologyText: 'Un systeme de ventilation moderne de Zehnder assure en complement un apport continu d air frais et un renouvellement d air optimal.',
+      customizationTitle: 'Amenagement individuel',
+      customizationText: 'Les finitions interieures restent volontairement ouvertes et permettent a l acquereur une personnalisation sur mesure, pour un lieu de vie convaincant a la fois sur le plan architectural et personnel.'
     },
     gallery: {
       title: 'Galerie'
