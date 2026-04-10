@@ -24,7 +24,7 @@
         <p class="animate" data-animate="animFloatUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) .24s forwards">{{ t('apartments.intro2') }}</p>
       </div>
       <div class="img animate" data-animate="animFloatUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) .18s forwards">
-        <img :src="baseUrl + 'imgs/apartments/apartments-die-wohnungen.jpg'" alt="Residence Kreuzweg" />
+        <img :src="baseUrl + 'imgs/apartments/apartments-die-wohnungen.webp'" alt="Residence Kreuzweg" />
       </div>
     </section>
 
@@ -73,9 +73,9 @@ const baseUrl = inject('baseUrl', '/')
 const { t } = useI18n()
 
 const heroSlides = computed(() => [
-  baseUrl + 'imgs/apartments/apartments-hero-1.jpg',
-  baseUrl + 'imgs/apartments/apartments-hero-2.jpg',
-  baseUrl + 'imgs/apartments/apartments-hero-3.jpg',
+  baseUrl + 'imgs/apartments/apartments-hero-1.webp',
+  baseUrl + 'imgs/apartments/apartments-hero-2.webp',
+  baseUrl + 'imgs/apartments/apartments-hero-3.webp',
 ])
 
 function changeImg(n) {

@@ -49,10 +49,10 @@ function publicImageUrl(relativePath) {
 
 // Hero slider: take images from `public/imgs/gallery`.
 const heroImgs = computed(() => [
-  publicImageUrl('imgs/gallery/12 9.png'),
-  publicImageUrl('imgs/gallery/13 1.png'),
-  publicImageUrl('imgs/gallery/6 41.png'),
-  publicImageUrl('imgs/gallery/7 (3) 1.png'),
+  publicImageUrl('imgs/gallery/12 9.webp'),
+  publicImageUrl('imgs/gallery/13 1.webp'),
+  publicImageUrl('imgs/gallery/6 41.webp'),
+  publicImageUrl('imgs/gallery/7 (3) 1.webp'),
 ])
 
 // Grid below: keep the original full set from `public/imgs/galerie`.

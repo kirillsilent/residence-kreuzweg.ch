@@ -149,12 +149,12 @@ const apartmentRows = [
   })),
 ]
 const partnerLogos = [
-  'Frame 1534994131.png',
-  'Frame 1534994132.png',
-  'Frame 1534994133.png',
-  'Frame 1534994134.png',
-  'Frame 1534994135.png',
-  'Frame 1534994136.png',
+  'Frame 1534994131.webp',
+  'Frame 1534994132.webp',
+  'Frame 1534994133.webp',
+  'Frame 1534994134.webp',
+  'Frame 1534994135.webp',
+  'Frame 1534994136.webp',
 ]
 
 function fileUrl(relativePath) {

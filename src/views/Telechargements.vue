@@ -69,13 +69,13 @@ const heroSlides = computed(() => [
 ])
 
 const progressImages = computed(() => [
-  baseUrl + 'imgs/baufortschritt/progress-01.jpg',
-  baseUrl + 'imgs/baufortschritt/progress-02.jpg',
-  baseUrl + 'imgs/baufortschritt/progress-03.jpg',
-  baseUrl + 'imgs/baufortschritt/progress-04.jpg',
-  baseUrl + 'imgs/baufortschritt/progress-05.jpg',
-  baseUrl + 'imgs/baufortschritt/progress-06.jpg',
-  baseUrl + 'imgs/baufortschritt/progress-07.jpg',
+  baseUrl + 'imgs/baufortschritt/progress-01.webp',
+  baseUrl + 'imgs/baufortschritt/progress-02.webp',
+  baseUrl + 'imgs/baufortschritt/progress-03.webp',
+  baseUrl + 'imgs/baufortschritt/progress-04.webp',
+  baseUrl + 'imgs/baufortschritt/progress-05.webp',
+  baseUrl + 'imgs/baufortschritt/progress-06.webp',
+  baseUrl + 'imgs/baufortschritt/progress-07.webp',
 ])
 const sideImages = computed(() => progressImages.value.slice(1, 3))
 const bottomImages = computed(() => progressImages.value.slice(3))

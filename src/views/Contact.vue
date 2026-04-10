@@ -80,9 +80,9 @@ const baseUrl = inject('baseUrl', '/')
 const { t, language } = useI18n()
 
 const heroSlides = computed(() => [
-  baseUrl + 'imgs/contact/contact-hero-1.jpg',
-  baseUrl + 'imgs/contact/contact-hero-2.jpg',
-  baseUrl + 'imgs/contact/contact-hero-3.jpg',
+  baseUrl + 'imgs/contact/contact-hero-1.webp',
+  baseUrl + 'imgs/contact/contact-hero-2.webp',
+  baseUrl + 'imgs/contact/contact-hero-3.webp',
 ])
 
 // Vor dem Deployment durch die Zieladresse ersetzen.
