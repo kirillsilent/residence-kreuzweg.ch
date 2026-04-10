@@ -87,6 +87,8 @@ const fullscreenTouchStartX = ref(null)
 const fullscreenTouchStartY = ref(null)
 const { language, setLanguage, t } = useI18n()
 let cleanupHeaderInteractions = null
+let loadingTimeoutId = null
+const LOADING_SCREEN_DURATION_MS = 3000
 
 const SITE_NAME = 'Residence Kreuzweg'
 const SITE_URL = 'https://residence-des-muses.ch'
@@ -411,7 +413,9 @@ function runAnimations() {
 }
 
 onMounted(() => {
-  loaded.value = true
+  loadingTimeoutId = window.setTimeout(() => {
+    loaded.value = true
+  }, LOADING_SCREEN_DURATION_MS)
   initSliderSafe()
   initHeaderInteractions()
   runAnimations()
@@ -437,6 +441,11 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  if (loadingTimeoutId !== null) {
+    window.clearTimeout(loadingTimeoutId)
+    loadingTimeoutId = null
+  }
+
   const $ = window.jQuery || window.$
   if ($) {
     $(document).off('click', '.imgShow')
