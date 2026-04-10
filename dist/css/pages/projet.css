@@ -38,7 +38,7 @@
 }
 
 .page-projet .tree-columns > div:nth-child(3) p {
-  line-height: 29.5px;
+  line-height: 22.5px;
   text-align: justify;
   text-align-last: left;
   text-justify: inter-word;
@@ -63,7 +63,7 @@
   font-weight: 500;
   letter-spacing: 0.08em;
   line-height: 120%;
-  text-align: left;
+  text-align: center;
 }
 
 @media only screen and (max-width: 450px) {
